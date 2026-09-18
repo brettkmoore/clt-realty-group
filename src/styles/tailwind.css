@@ -73,11 +73,11 @@
 
 @layer base {
   :root {
-    --nav-h: 4.25rem;
+    --nav-h: 3.5rem;
   }
   @media (min-width: 640px) {
     :root {
-      --nav-h: 5rem;
+      --nav-h: 4rem;
     }
   }
 

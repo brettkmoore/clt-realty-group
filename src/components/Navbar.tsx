@@ -7,6 +7,7 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import { Logo } from '@/components/Logo'
+import { ContactTrigger } from '@/components/ContactTrigger'
 import { nav, business } from '@/lib/site'
 
 /**
@@ -25,8 +26,6 @@ import { nav, business } from '@/lib/site'
  * the start.
  */
 const linkClass = 'nav-link text-sm/6 tracking-[0.04em] uppercase'
-const actionClass =
-  'btn-shine inline-flex min-h-11 items-center justify-center border border-pink bg-pink px-4 text-[12px] font-semibold tracking-[0.16em] text-cream uppercase hover:border-pink-hover hover:bg-pink-hover sm:px-6'
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -65,9 +64,7 @@ export function Navbar() {
           <a href={`tel:${business.phoneE164}`} className={`tap hidden text-sm/6 whitespace-nowrap lg:block figure ${tone}`}>
             {business.phone}
           </a>
-          <Link href={nav.action.href} className={actionClass}>
-            {nav.action.title}
-          </Link>
+          <ContactTrigger variant="header">{nav.action.title}</ContactTrigger>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -88,9 +85,9 @@ export function Navbar() {
               <span className="sr-only">{business.name}</span>
               <Logo />
             </Link>
-            <Link href={nav.action.href} onClick={close} className={`${actionClass} ml-auto`}>
+            <ContactTrigger variant="header" className="ml-auto" onOpen={close}>
               {nav.action.title}
-            </Link>
+            </ContactTrigger>
             <button type="button" onClick={close} className="-m-2.5 p-2.5 text-ink">
               <span className="sr-only">Close menu</span>
               <XMarkIcon aria-hidden="true" className="size-6" />

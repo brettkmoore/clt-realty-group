@@ -16,7 +16,8 @@ type State = { status: 'idle' | 'sending' | 'sent' | 'not-connected' | 'error'; 
  * Posts to /api/contact. When the endpoint is not connected yet the form
  * says so and hands the visitor the phone number instead of pretending.
  */
-export function ContactForm() {
+export function ContactForm({ compact = false }: { compact?: boolean } = {}) {
+  void compact
   const [state, setState] = useState<State>({ status: 'idle' })
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {

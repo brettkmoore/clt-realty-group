@@ -1,5 +1,6 @@
 import { Container } from '@/components/Container'
 import { Button } from '@/components/Button'
+import { ContactTrigger } from '@/components/ContactTrigger'
 
 /**
  * Tailwind Plus, Marketing, CTA sections, "Simple justified" (React,
@@ -27,7 +28,7 @@ export function ClosingAsk({
             {children ? <p className="mt-6 text-lg/8 text-ink-soft">{children}</p> : null}
           </div>
           <div className="mt-10 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-x-8 lg:mt-0 lg:shrink-0">
-            <Button href="/contact/">Contact Candace</Button>
+            <ContactTrigger>Contact Candace</ContactTrigger>
             {secondaryHref ? (
               <Button variant="quiet" href={secondaryHref}>
                 {secondaryLabel}

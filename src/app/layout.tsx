@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { SchemaGraph } from '@/components/SchemaGraph'
+import { ContactModalProvider } from '@/components/ContactModal'
 import { agentNode, brokerageNode, franchisorNode, headshotNode, personNode, websiteNode } from '@/lib/schema'
 import { agent, business, siteUrl, HIDE_FROM_SEARCH_ENGINES } from '@/lib/site'
 
@@ -55,9 +56,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`h-full antialiased ${fraunces.variable} ${dmSans.variable}`}>
       <body className="flex min-h-full flex-col bg-field font-sans text-ink">
         <SchemaGraph nodes={[websiteNode(), agentNode(), personNode(), headshotNode(), brokerageNode(), franchisorNode()]} />
-        <Navbar />
-        <main className="flex-auto">{children}</main>
-        <Footer />
+        <ContactModalProvider>
+          <Navbar />
+          <main className="flex-auto">{children}</main>
+          <Footer />
+        </ContactModalProvider>
         <Analytics />
         <SpeedInsights />
       </body>

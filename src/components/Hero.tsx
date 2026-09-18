@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Button } from '@/components/Button'
+import { ContactTrigger } from '@/components/ContactTrigger'
 import { HeroVideo, HERO_POSTER } from '@/components/HeroVideo'
 import { agent, business, tagline } from '@/lib/site'
 
@@ -21,8 +21,9 @@ import { agent, business, tagline } from '@/lib/site'
  * The poster still sits under the video at all times and is a graded
  * frame of the same footage, so a blocked autoplay shows the still and
  * a permitted one never flashes. It is the LCP element and loads with
- * priority. A small circular portrait, 96 pixels from a 1200 by 1600
- * source, sits above the headline; never a large photo panel of her.
+ * priority. A small circular portrait, 72 pixels from a 1200 by 1600
+ * source, sits beside the call to action with her name under it; never
+ * a large photo panel of her, and never up at the top of the hero.
  *
  * Built from Tailwind Plus, Marketing, Heroes, "Simple centered with
  * background image" (React, v4.3): full-bleed media, a scrim, copy on
@@ -47,35 +48,46 @@ export function Hero() {
       <div aria-hidden="true" className="hero-scrim-y absolute inset-0 -z-10" />
       <div aria-hidden="true" className="hero-scrim-x absolute inset-0 -z-10" />
 
-      <div className="mx-auto w-full max-w-7xl px-6 pt-[calc(var(--nav-h)+3rem)] pb-12 sm:pb-16 lg:px-8 lg:pb-20">
+      {/*
+       * Brett and Candace, 2026-09-18, reviewing on her laptop: the call to
+       * action was below the fold. Everything here is sized to fit one
+       * screen at 1440 by 780 with browser chrome: a shorter header, the
+       * headline capped at 4rem, tighter steps between the eyebrow, the
+       * headline, the paragraph and the actions, and the portrait moved
+       * out of the top and set beside the button with her name under it.
+       */}
+      <div className="mx-auto w-full max-w-7xl px-6 pt-[calc(var(--nav-h)+1.5rem)] pb-8 sm:pb-10 lg:px-8 lg:pb-12">
         <div className="max-w-2xl">
-          <Image
-            src={agent.headshot}
-            alt={agent.headshotAlt}
-            width={agent.headshotWidth}
-            height={agent.headshotHeight}
-            sizes="96px"
-            priority
-            className="size-24 rounded-full object-cover object-top ring-2 ring-cream/80"
-          />
-          <p className="mt-6 text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/85">
+          <p className="text-[12px] font-semibold tracking-[0.1em] uppercase text-cream/85 sm:text-[13px]">
             Rock Hill, Fort Mill, Charlotte and the Carolina towns around them
           </p>
-          <h1 className="mt-4 font-display text-[2.5rem]/[1.04] tracking-[-0.01em] text-pretty text-cream sm:text-6xl/[1.03] lg:text-7xl/[1.02]">
+          <h1 className="mt-3 font-display text-[2.375rem]/[1.04] tracking-[-0.01em] text-pretty text-cream sm:text-[3.25rem]/[1.03] lg:text-[4rem]/[1.02]">
             {tagline}
           </h1>
-          <p className="mt-6 max-w-xl text-lg/8 text-cream/90 sm:text-xl/8">
+          <p className="mt-4 max-w-xl text-base/7 text-cream/90 sm:text-lg/7">
             I am Candace L. Thompson, a Rock Hill native with Keller Williams Connected in Fort Mill. I sell homes on
             both sides of the state line, and I have never rushed a client through a decision to get to closing
             faster. The home has to be right, and the payment has to let you sleep.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
-            <Button href="/contact/" className="focus-visible:outline-cream">
-              Talk with Candace
-            </Button>
-            <a href={`tel:${business.phoneE164}`} className="tap text-sm/6 text-cream/85 hover:text-cream figure">
-              Call or text {business.phone}
-            </a>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-5">
+            <figure className="flex shrink-0 flex-col items-center">
+              <Image
+                src={agent.headshot}
+                alt={agent.headshotAlt}
+                width={agent.headshotWidth}
+                height={agent.headshotHeight}
+                sizes="72px"
+                priority
+                className="size-[72px] rounded-full object-cover object-top ring-2 ring-cream/80"
+              />
+              <figcaption className="mt-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-cream/85">{agent.displayName}</figcaption>
+            </figure>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              <ContactTrigger className="focus-visible:outline-cream">Talk with Candace</ContactTrigger>
+              <a href={`tel:${business.phoneE164}`} className="tap text-sm/6 text-cream/85 hover:text-cream figure">
+                Or call or text {business.phone}
+              </a>
+            </div>
           </div>
         </div>
       </div>
