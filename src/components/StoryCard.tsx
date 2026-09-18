@@ -26,7 +26,7 @@ export function StoryCard({ story, priority = false }: { story: Story; priority?
             height={1067}
             sizes="(min-width: 1024px) 400px, (min-width: 640px) 50vw, 100vw"
             priority={priority}
-            className="aspect-video w-full bg-paper object-cover sm:aspect-2/1 lg:aspect-3/2"
+            className="aspect-video w-full rounded-xl bg-paper object-cover sm:aspect-2/1 lg:aspect-3/2"
           />
         ) : (
           <div className="flex aspect-video w-full items-end bg-paper p-6 sm:aspect-2/1 lg:aspect-3/2">
@@ -39,9 +39,13 @@ export function StoryCard({ story, priority = false }: { story: Story; priority?
           <time dateTime={story.date} className="text-ink-faint">
             {formatDate(story.date)}
           </time>
-          <span className="relative z-10 font-semibold tracking-[0.08em] uppercase text-blue">
-            {story.role} <span className="text-ink-faint">&middot;</span> {story.city}
-          </span>
+          <Link
+            href={`/stories/#${story.role === 'Buyer story' ? 'buyer-stories' : 'seller-stories'}`}
+            className="tap relative z-10 font-semibold tracking-[0.08em] uppercase text-blue underline decoration-blue/25 underline-offset-4 hover:decoration-blue"
+          >
+            {story.role.replace(' story', ' stories')}
+          </Link>
+          <span className="text-ink-faint">{story.city}, {story.state}</span>
         </div>
         <div className="relative grow">
           <h3 className="mt-3 font-display text-[1.375rem]/[1.25] text-ink group-hover:text-ink-soft">

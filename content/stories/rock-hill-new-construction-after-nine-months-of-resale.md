@@ -8,8 +8,9 @@ state: "SC"
 area: "rock-hill"
 role: "Buyer story"
 summary: "These buyers wanted a resale home and a quick move. After nine months in a tight market with nothing that fit, I widened the search to new construction. They built exactly the layout they wanted and used their own lender instead of the builder's."
-image: null
-alt: null
+image: "/stories/4107-sunset-ridge-rock-hill-sc-29732-exterior.webp"
+alt: "Front exterior of a two story home with a covered entry and lawn at 4107 Sunset Ridge, Rock Hill, South Carolina"
+heroNote: "One of my Rock Hill listings. The home in this story is not pictured."
 facts:
   - label: "Build price"
     value: "$485,476"

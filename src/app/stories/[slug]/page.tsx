@@ -3,12 +3,12 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 import { Container } from '@/components/Container'
-import { Breadcrumbs } from '@/components/Breadcrumbs'
+import Link from 'next/link'
 import { StoryCard } from '@/components/StoryCard'
 import { ClosingAsk } from '@/components/ClosingAsk'
 import { FactList } from '@/components/FactList'
 import { SchemaGraph } from '@/components/SchemaGraph'
-import { Heading, Eyebrow } from '@/components/Text'
+import { Heading } from '@/components/Text'
 import { absolute, AGENT_ID, PERSON_ID, breadcrumb, cityNode, imageNode, placeNode } from '@/lib/schema'
 import { agent, areas, areaShort, business, siteUrl } from '@/lib/site'
 import { formatDate, getStories, getStory } from '@/lib/stories'
@@ -49,6 +49,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   ].slice(0, 3)
   const area = areas.find((a) => a.slug === story.area)
   const path = `/stories/${story.slug}/`
+  const roleAnchor = story.role === 'Buyer story' ? 'buyer-stories' : 'seller-stories'
   const imageId = `${siteUrl}${path}#image`
 
   return (
@@ -82,28 +83,62 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       />
 
       <article>
-        <header className="pt-10 sm:pt-14">
+        {/*
+         * The header, modeled on buddybuck.com's blog (Brett, 2026-09-18):
+         * a dark band holds the back link, the category, the headline in
+         * white and a thin metadata row. The band is her deep blue, never
+         * the pink. The photograph sits below the headline and breaks the
+         * seam between the band and the white body, half in each,
+         * contained and centered with rounded corners; the band's bottom
+         * padding and the figure's negative top margin are the same
+         * number so the split is exact. The category is a real link to
+         * the filtered index, never a pill.
+         */}
+        <header className="bg-blue-deep pt-10 pb-[7rem] sm:pt-14 sm:pb-[10rem] lg:pb-[13rem]">
           <Container>
             <div className="mx-auto max-w-3xl">
-              <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Stories', href: '/stories/' }, { name: story.city, href: area ? `/areas/${area.slug}/` : '/stories/' }]} />
-              <Eyebrow className="mt-8">
-                {story.role} <span className="text-ink-faint">&middot;</span> {story.city}, {story.county}
-              </Eyebrow>
-              <Heading as="h1" level="section" className="mt-4">
+              <Link href="/stories/" className="tap text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/70 hover:text-cream">
+                All stories
+              </Link>
+              <p className="mt-8 text-[13px] font-semibold tracking-[0.08em] uppercase text-cream/85">
+                <Link href={`/stories/#${roleAnchor}`} className="tap underline decoration-cream/40 underline-offset-4 hover:decoration-cream">
+                  {story.role.replace(' story', ' stories')}
+                </Link>
+                <span className="text-cream/50"> &middot; </span>
+                {area ? (
+                  <Link href={`/areas/${area.slug}/`} className="tap underline decoration-cream/40 underline-offset-4 hover:decoration-cream">
+                    {story.city}, {story.state}
+                  </Link>
+                ) : (
+                  <span>
+                    {story.city}, {story.state}
+                  </span>
+                )}
+              </p>
+              <Heading as="h1" level="section" className="mt-5 text-cream!">
                 {story.title}
               </Heading>
-              <p className="mt-6 text-sm/6 text-ink-faint">
+              <p className="mt-6 text-sm/6 text-cream/70">
                 <time dateTime={story.date}>{formatDate(story.date)}</time> <span aria-hidden="true">&middot;</span> {story.readMinutes} min read{' '}
-                <span aria-hidden="true">&middot;</span> By {agent.name}, {business.name} <span aria-hidden="true">&middot;</span> {story.city}, {story.state}
+                <span aria-hidden="true">&middot;</span> By {agent.name}, {business.name}
               </p>
             </div>
           </Container>
         </header>
 
         {story.image ? (
-          <Container className="mt-10">
+          <Container className="-mt-[7rem] sm:-mt-[10rem] lg:-mt-[13rem]">
             <figure className="mx-auto max-w-5xl">
-              <Image src={story.image} alt={story.alt ?? story.title} width={1600} height={1067} sizes="(min-width: 1024px) 1024px, 100vw" priority className="w-full" />
+              <Image
+                src={story.image}
+                alt={story.alt ?? story.title}
+                width={1600}
+                height={1000}
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                priority
+                className="aspect-[16/10] w-full rounded-2xl object-cover"
+              />
+              {story.heroNote ? <figcaption className="mt-3 text-xs/5 text-ink-faint">{story.heroNote}</figcaption> : null}
             </figure>
           </Container>
         ) : null}
@@ -135,7 +170,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       {related.length ? (
         <section className="mt-20 border-t border-rule py-20 lg:py-28">
           <Container>
-            <Eyebrow>More stories</Eyebrow>
+            <p className="text-[13px] font-semibold tracking-[0.08em] uppercase text-blue">More stories</p>
             <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((s) => (
                 <StoryCard key={s.slug} story={s} />

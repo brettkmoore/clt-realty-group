@@ -8,8 +8,9 @@ state: "NC"
 area: "waxhaw"
 role: "Buyer story"
 summary: "A family relocating from upstate New York fell for a Waxhaw home they never walked through. I filmed the walkthrough, negotiated twice for the original roof and HVAC, closed $25,000 under list, and checked on the empty house every two weeks until they arrived."
-image: null
-alt: null
+image: "/stories/1215-autumn-cove-monroe-nc-28112-exterior.webp"
+alt: "Front of a one story home on open acreage at 1215 Autumn Cove, Monroe, Union County, North Carolina"
+heroNote: "One of my Union County listings, in Monroe. The Waxhaw home in this story is not pictured."
 facts:
   - label: "List price"
     value: "$650,000"

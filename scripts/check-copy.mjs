@@ -60,6 +60,8 @@ for (const file of files) {
     lines.forEach((line, i) => {
       // Skip comment lines in code so design notes can quote patterns.
       if (/\.tsx?$/.test(file) && /^\s*(?:\*|\/\/|\/\*)/.test(line)) return
+      // Addresses may appear in image filenames, alt text and hero captions (Brett, 2026-09-18), never in body copy.
+      if (rule.skipFileRefs && /^(?:image|alt|heroNote):/.test(line.trim())) return
       const m = (rule.skipFileRefs ? line.replace(/\/stories\/[\w-]+\.webp/g, '') : line).match(rule.re)
       if (m) {
         failures++

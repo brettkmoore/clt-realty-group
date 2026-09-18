@@ -32,6 +32,63 @@ Written after the first build on 2026-09-18. What the site currently says, where
 - Three real Google reviews quoted on the homepage, verbatim, attributed as signed.
 - Footer built to the Keller Williams Identity and Style Guide section 3.1 (market center logo, ownership statement, local compliance) plus both state disclosures, both license numbers and Equal Housing.
 
+## Articles: the count, and the deals with none
+
+**Eleven articles exist and eleven are published.** Every folder in the Drive was swept on 2026-09-18 for anything article-shaped: Case_Studies (11 files), Neighborhood_Research (12 town guides, used for the area pages, plus civic photo folders), 06_Unsorted_NeedsReview (empty), 03_Events_Marketing (empty), 04_Video (both subfolders empty), 07_Client_Dossiers (11, one per case study, none without an article), the Master Tracker, and the `Best Known Brand/Clients/Candace Thompson` folder on Brett's own Drive (empty). The twelve neighborhood guides are research drafts, not articles in her voice, so they are area pages rather than blog posts.
+
+**Deals in the tracker with no article.** Every listing row in `00_Master_Tracker` that has no case study, 46 addresses. This is the list for her call. Each has a Facebook photo album and most have a Drive folder with heroes already chosen, so an article on any of them is a conversation with her and nothing else.
+
+- 1215 Autumn Cv, Monroe, NC
+- 1202 Midwood Dr, Monroe, NC
+- 767 Gants Rd, York, SC
+- 9824 Dauphine Dr, Charlotte, NC
+- 108 Wharton Ln, Columbia, SC
+- 706 Dillon Way, Fort Mill, SC
+- 130 Water Oak Dr, Pineville, NC
+- 11228 Island View Ln, Lancaster, SC
+- 10920 Walking Path, Charlotte, NC
+- 9704 Cayenne Dr, Charlotte, NC
+- 6828 Trimbach Way, Charlotte, NC
+- 1645 Riverside Rd, Lancaster, SC
+- 911 Balsam Terrace, Charlotte, NC
+- 14542 Greenpoint Ln, Huntersville, NC
+- 432 Summit St, Rock Hill, SC
+- 4107 Sunset Ridge, Rock Hill, SC
+- 1399 Edgefield, York, SC
+- 3637 Warp St, Charlotte, NC
+- 4024 Whittier Ln, Tega Cay, SC
+- 4007 Mt Gallant Rd, Rock Hill, SC
+- 723 Carolina Ave, Rock Hill, SC
+- 1121 Capps Hollow, Charlotte, NC
+- 119 Foote St, Chester, SC
+- 11807 Broadwater, Charlotte, NC
+- 5915 Fenway Dr, Charlotte, NC
+- 553 Sansberry, York, SC
+- 1816 Azalea Ave, Kannapolis, NC
+- 838 Coach House Ct, Rock Hill, SC
+- 4335 Bridge Pointe, Harrisburg, NC
+- 132 Reid St, Rock Hill, SC
+- 118 Waterlynn Club Dr, Mooresville, NC
+- 2225 Century Oaks, Charlotte, NC
+- 5224 Deerton, Charlotte, NC
+- 820 Chestnut St, Rock Hill, SC
+- 846 Jefferson Ave, Rock Hill, SC
+- 124 Reid St, Rock Hill, SC
+- 9112 Korniv Dr, Charlotte, NC
+- 118 Jason Ct, Fort Mill, SC
+- 130 Reid St, 
+- 843 S Stonewall Ave, Rock Hill, SC
+- 415 Presidio Dr, Rock Hill, SC
+- 12724 Persimmon Tree, Charlotte, NC
+- 810 Rutledge, Catawba, SC
+- 124 Morning Dew, Mount Holly, NC
+- 5931 Versage, Mint Hill, NC
+- 141 Niven Rd, Lancaster, SC
+
+**Three articles have no photo folder at all** (buyer-side purchases, so she never photographed them): 120 Fosters Glen Place, Mooresville, NC (article written, no photo folder); 548 Cambria St, Rock Hill, SC (article written, no photo folder); 6017 Lowergate Dr, Waxhaw, NC (article written, no photo folder).
+
+**Four articles carry a fallback hero** from another of her listings, captioned as such on the page and named truthfully in the alt text: the Rock Hill new construction build (shows 4107 Sunset Ridge, Rock Hill), the Rock Hill single level townhome (shows 432 Summit St, Rock Hill), the Waxhaw purchase (shows 1215 Autumn Cove, Monroe, the same county), and the Mooresville duplex (shows 14542 Greenpoint Ln, Huntersville, the next town south). Each is replaced the day she supplies a photo of the actual property.
+
 ## Facts for Candace to confirm
 
 1. **Both license numbers.** SC 72014 and NC 259158 are printed on her Keller Williams page. Neither regulator's lookup could be fetched to corroborate (ncrec.gov returns 403 to automated requests; the SC lookup loops). Read both back to her.
@@ -50,7 +107,7 @@ Written after the first build on 2026-09-18. What the site currently says, where
 
 ## Assets still needed
 
-14. **Hero photos for four stories.** The Mooresville duplex, the Rock Hill new construction build, the Rock Hill single level townhome and the Waxhaw purchase have no listing folder in Drive (the townhome folder exists but is empty; the other three were buyer-side). The cards render without an image. Any photo she has of those four fills the gap.
+14. **Real photos for the four fallback heroes.** See the articles section above. The Mooresville duplex, the Rock Hill new construction build, the Rock Hill single level townhome and the Waxhaw purchase.
 15. **The hero photo choices.** For the two sensitive stories (the divorce and the loss) an interior was chosen over the exterior and the filename carries no address. For the other five the filename carries the address per Brett's rule and the alt text does not. Two minutes on `/stories/` confirms she is comfortable with each.
 16. **The vector logo.** `all gold.eps` is on her desktop. The site uses the 1422 by 1023 PNG rasterized from it, displayed at 240 pixels, so it is sharp. The vector is wanted for a favicon and print. The current favicon is a drawn crescent on blue.
 17. **The listing video.** `1215 Autumn Cove, Cinematic.mp4` (214 MB, a Monroe listing) sits in the Drive root. It could become a hero video the way Deborah's site has one, cut to forty seconds with the address card removed. Not used yet.

@@ -8,8 +8,9 @@ state: "NC"
 area: null
 role: "Buyer story"
 summary: "An out-of-state investor wanted a move-in ready property and a close before the holidays. I underwrote the deal before he flew in, negotiated $13,000 off list, and then his own attorney caught a chain-of-title problem on the seller's side that pushed closing into January."
-image: null
-alt: null
+image: "/stories/14542-greenpoint-ln-huntersville-nc-exterior.webp"
+alt: "Front exterior of a two story home at 14542 Greenpoint Lane, Huntersville, North Carolina"
+heroNote: "One of my listings in Huntersville, the next town south of Mooresville. The duplex in this story is not pictured."
 facts:
   - label: "List price"
     value: "$520,000"

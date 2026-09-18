@@ -40,15 +40,23 @@ export default async function StoriesPage() {
           .
         </p>
       </InteriorHero>
-      <section className="py-20 lg:py-28">
-        <Container>
-          <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-            {stories.map((story, i) => (
-              <StoryCard key={story.slug} story={story} priority={i < 3} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      {[
+        { id: 'seller-stories', title: 'Seller stories', items: stories.filter((s) => s.role !== 'Buyer story') },
+        { id: 'buyer-stories', title: 'Buyer stories', items: stories.filter((s) => s.role === 'Buyer story') },
+      ].map((group, gi) => (
+        <section key={group.id} id={group.id} className={gi === 0 ? 'py-20 lg:py-28' : 'border-t border-rule py-20 lg:py-28'}>
+          <Container>
+            <h2 className="font-display text-[2rem]/[1.1] text-ink sm:text-[2.5rem]/[1.1]">{group.title}</h2>
+            <p className="mt-3 text-base/7 text-ink-soft">{group.items.length === 1 ? 'One story' : `${group.items.length} stories`}</p>
+            <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+              {group.items.map((story, i) => (
+                <StoryCard key={story.slug} story={story} priority={gi === 0 && i < 3} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      ))}
+
       <ClosingAsk heading="Your move could be the next one." secondaryHref="/areas/" secondaryLabel="See the areas" />
     </>
   )
