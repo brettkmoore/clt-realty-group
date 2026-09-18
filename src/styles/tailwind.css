@@ -1,0 +1,423 @@
+@import 'tailwindcss';
+
+/*
+ * ===================================================================
+ *  CLT REALTY GROUP. THE SYSTEM, IN ONE FILE.
+ * ===================================================================
+ *
+ * Built 2026-09-18 to the same conventions as bestknownbrand.com, which
+ * Brett named as the quality bar: white ground, near-black type, accents
+ * used as labels and controls and never as decoration, a warm serif
+ * against a clean sans, sections separated by space and hairlines rather
+ * than cards, and nothing that cannot be clicked dressed as a control.
+ *
+ * WHAT IS SPECIFIC TO THIS SITE. The palette is the one agreed with
+ * Candace on 2026-08-28: sixty percent white, thirty percent blue, ten
+ * percent pink. The blue and the pink are sampled from her own logo
+ * (02_Brand_Assets/Logos/clt-realty-logo-primary.png): the logo blue is
+ * #0013f5 and the crescent is #ff04f8. The blue carries eyebrows, labels,
+ * the header underline and one deep band per page. The pink is the one
+ * action color: it fills the primary button and nothing else. The logo's
+ * neon pink fails contrast under white type, so the button pink is the
+ * same hue brought down to #c400bd (5.2:1 with white); the true logo
+ * pink survives at small sizes, on selection and on the crescent icon.
+ *
+ * Photographs of homes carry the rest of the color. The chrome around
+ * them stays white, blue and greyscale so the homes read as the subject.
+ */
+
+@theme {
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), 'Iowan Old Style', Georgia, serif;
+
+  --color-field: #ffffff;
+  --color-paper: #f4f5f9;
+  --color-ink: #111118;
+  --color-ink-soft: #454552;
+  --color-ink-faint: #6b6b78;
+  --color-ink-hover: #2a2a33;
+  --color-rule: #e3e4ec;
+  --color-night: #0a0f5c;
+  --color-cream: #ffffff;
+
+  /* The logo blue for labels, and a deep blue for the one band per page. */
+  --color-blue: #0013f5;
+  --color-blue-deep: #0a0f5c;
+  --color-blue-soft: #e9ebfe;
+
+  /* The action pink. Fills the primary button only. */
+  --color-pink: #c400bd;
+  --color-pink-hover: #9d0097;
+  --color-pink-bright: #ff04f8;
+  --color-pink-soft: #fce8fb;
+}
+
+@layer base {
+  :root {
+    --nav-h: 4.25rem;
+  }
+  @media (min-width: 640px) {
+    :root {
+      --nav-h: 5rem;
+    }
+  }
+
+  html {
+    background-color: var(--color-field);
+    scroll-padding-top: calc(var(--nav-h) + 1.5rem);
+  }
+
+  body {
+    background-color: var(--color-field);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: var(--color-blue);
+    color: #ffffff;
+  }
+
+  /*
+   * Every interactive element transitions its state in 160ms on an
+   * ease-out. Nothing snaps.
+   */
+  a,
+  button,
+  summary,
+  input,
+  textarea,
+  select,
+  label {
+    transition-property: color, background-color, border-color, text-decoration-color, opacity, box-shadow, transform;
+    transition-duration: 160ms;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    a,
+    button,
+    summary,
+    input,
+    textarea,
+    select,
+    label {
+      transition-property: color, background-color, opacity;
+      transition-duration: 120ms;
+    }
+  }
+
+  /* Visible focus for keyboard users. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+  }
+}
+
+/*
+ * THE PRESSED OBJECT. The primary button's fill, edge and press, ported
+ * from bestknownbrand.com. A hairline top highlight, a wide low shadow,
+ * a sweep of light on hover, a one pixel press. Applied to controls only.
+ */
+.btn-shine {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, rgba(0, 0, 0, 0.08) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 1px 2px rgba(20, 20, 15, 0.16),
+    0 12px 32px -10px rgba(20, 20, 15, 0.35);
+  transition:
+    transform 0.16s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.16s ease-out,
+    background-color 0.16s ease-out;
+}
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 20%, rgba(255, 255, 255, 0.25) 48%, transparent 76%);
+  transform: translateX(-130%);
+  transition: transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@media (hover: hover) {
+  .btn-shine:hover,
+  .btn-shine:focus-visible {
+    transform: translateY(-1px);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.26),
+      0 2px 4px rgba(20, 20, 15, 0.16),
+      0 16px 36px -10px rgba(20, 20, 15, 0.4);
+  }
+  .btn-shine:hover::after,
+  .btn-shine:focus-visible::after {
+    transform: translateX(130%);
+  }
+}
+.btn-shine:active {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 2px 6px rgba(0, 0, 0, 0.25),
+    0 1px 1px rgba(20, 20, 15, 0.12);
+  transition-duration: 0.1s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine,
+  .btn-shine:hover,
+  .btn-shine:active {
+    transform: none;
+  }
+  .btn-shine::after,
+  .btn-shine:hover::after {
+    transition: none;
+    transform: translateX(-130%);
+  }
+}
+
+/* The header underline that grows in from the left. Only on links. */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: -6px;
+  height: 1px;
+  background: var(--color-blue);
+  transition: right 0.2s ease-out;
+}
+@media (hover: hover) {
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after,
+  .nav-link[aria-current='page']::after {
+    right: 0;
+  }
+}
+.nav-link[aria-current='page']::after {
+  right: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}
+
+/* A 44px hit area on a text-sized link, without moving the text. */
+.tap {
+  position: relative;
+}
+.tap::before {
+  content: '';
+  position: absolute;
+  inset: -13px 0;
+}
+
+/* The one alternate surface: a band that fades in and out, no hard edge. */
+.band {
+  background: linear-gradient(180deg, var(--color-field) 0%, var(--color-paper) 18%, var(--color-paper) 82%, var(--color-field) 100%);
+}
+
+/* A container that cannot be clicked. White, hairline, no radius, no hover. */
+.panel {
+  background: var(--color-field);
+  border: 1px solid var(--color-rule);
+}
+
+/*
+ * THE TILE. A photograph that is a link. The image zooms over 900ms while
+ * the tile lifts over 350ms, so the picture lags the frame. A hairline
+ * ink ring appears on hover. Only a link may carry this class.
+ */
+.tile {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-ink) 10%, transparent);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .group:hover .tile,
+  .group:focus-visible .tile {
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent),
+      0 24px 48px -20px rgba(0, 0, 0, 0.3);
+  }
+  .group:hover .tile img,
+  .group:focus-visible .tile img {
+    transform: scale(1.04);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile img {
+    transition: none;
+  }
+  .group:hover .tile,
+  .group:hover .tile img {
+    transform: none;
+  }
+}
+
+/* The mobile drawer's motion. */
+.drawer {
+  background-color: var(--color-field);
+  transition:
+    opacity 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.drawer[data-closed] {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+.drawer[data-leave] {
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .drawer {
+    transition: opacity 120ms ease-out;
+  }
+  .drawer[data-closed] {
+    transform: none;
+  }
+}
+
+/*
+ * THE HERO VIDEO. Reduced motion shows the poster still. The video is
+ * muted and loops; it carries the section while the copy sits on its own
+ * white surface, so no word is ever read over moving footage.
+ */
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*
+ * The still sits under the video at all times. If a device blocks
+ * autoplay (iOS Low Power Mode, a data saver, a paused background tab)
+ * the frame behind the words is the poster rather than black. Reduced
+ * motion removes the video and leaves the still.
+ */
+.hero-still {
+  display: block;
+  z-index: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    display: none;
+  }
+}
+
+/*
+ * THE STORY PROSE. 18 on 30, paragraphs 24 apart, a 40rem measure. The
+ * same numbers bestknownbrand.com's case study reads at.
+ */
+.prose-story {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+  color: var(--color-ink);
+}
+.prose-story > p {
+  margin: 1.5rem 0;
+}
+.prose-story > p:first-child {
+  margin-top: 0;
+}
+.prose-story h2 {
+  margin: 3rem 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  color: var(--color-ink);
+}
+.prose-story h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.prose-story ul,
+.prose-story ol {
+  margin: 1.25em 0;
+  padding-left: 1.4em;
+}
+.prose-story li {
+  margin: 0.4em 0;
+}
+.prose-story strong {
+  font-weight: 600;
+}
+.prose-story a {
+  color: var(--color-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: color-mix(in srgb, var(--color-ink) 25%, transparent);
+}
+.prose-story a:hover {
+  text-decoration-color: var(--color-ink);
+}
+.prose-story blockquote {
+  margin: 2.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-blue);
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  line-height: 1.4;
+  color: var(--color-ink);
+}
+.prose-story blockquote p {
+  margin: 0;
+}
+
+/* Tabular figures for prices and dates. */
+.figure {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Whole-pixel centering for the container so the wordmark never blurs. */
+.container-center {
+  margin-inline: auto;
+}
+@supports (margin-left: round(down, 1px, 1px)) {
+  .container-center {
+    margin-inline-start: round(down, (100% - min(100%, 42rem)) / 2, 1px);
+    margin-inline-end: auto;
+  }
+  @media (min-width: 64rem) {
+    .container-center {
+      margin-inline-start: round(down, (100% - min(100%, 80rem)) / 2, 1px);
+    }
+  }
+}

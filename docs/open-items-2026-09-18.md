@@ -1,0 +1,62 @@
+# Open items for the review pass with Candace
+
+Written after the first build on 2026-09-18. What the site currently says, where it came from, and what needs an answer before launch. Numbered so a call can walk it top to bottom. Nothing here was invented; where a fact is unknown the site says less rather than guessing.
+
+## Settled in this build
+
+- **Name: Candace, with an a.** Her email, her logo ("Candace L. Thompson, MBA"), her Keller Williams page and all seven transcripts agree. Brett's brief said "Candice"; the Drive folder `Brett K Moore/Clients/Candice` is empty and misspelled. Built as Candace L. Thompson. **Brett confirms before launch.**
+- Brokerage: Keller Williams Connected, 901 Dave Gibson Blvd., Fort Mill, SC 29708, office (803) 835-2300. From her Keller Williams page, read live in Chrome on 2026-09-18, and the PAD vault.
+- Phone (704) 778-0779 and email candacethompsonrealtor@gmail.com, confirmed on her Google Business Profile and her Keller Williams page.
+- Google Business Profile located and wired in: "Candace L Thompson, CLT Realty Group at Keller Williams", verified, service-area business with no address, open 8 a.m. to 7 p.m. every day, 5.0 from 32 reviews, coordinates in Fort Mill. Place ID in `src/lib/site.ts`.
+- Positioning: comfort and sanctuary, from the 2026-08-28 archetype session. Homepage headline is "Your home should be your sanctuary," her own line, chosen that day.
+- Palette: 60 percent white, 30 percent blue, 10 percent pink, agreed 2026-08-28. Blue and pink sampled from her logo. Fonts are Fraunces and DM Sans; Deborah's site uses Playfair and Geist, so nothing is shared.
+- Eleven stories, one per case study in Drive, rewritten in her voice without em dashes, client names or addresses. Seven have a hero photo from her listing folders; four have none (below).
+- Twelve area pages from the neighborhood guides in Drive, with the school ratings and "who buys here" profiles removed for fair housing.
+- Three real Google reviews quoted on the homepage, verbatim, attributed as signed.
+- Footer built to the Keller Williams Identity and Style Guide section 3.1 (market center logo, ownership statement, local compliance) plus both state disclosures, both license numbers and Equal Housing.
+
+## Facts for Candace to confirm
+
+1. **Both license numbers.** SC 72014 and NC 259158 are printed on her Keller Williams page. Neither regulator's lookup could be fetched to corroborate (ncrec.gov returns 403 to automated requests; the SC lookup loops). Read both back to her.
+2. **The year she was first licensed.** Not in any source. One review says she has been a client's agent for ten years; another says she sold them a home in 2019; another met her eight years ago. The site says "years" and gives no number until she does.
+3. **Whether CLT Realty Group is registered anywhere.** North Carolina rule 58A .0103(c) requires an assumed name to be filed and reported to the commission before advertising under it. South Carolina defines a "team" as two or more licensees; she is one person. The site presents CLT Realty Group as her personal brand at Keller Williams Connected. She should confirm with her broker-in-charge how the name is registered in each state and whether the footer sentence is the one they want.
+4. **The Keller Williams Connected DBA logo.** The style guide requires the market center's own DBA logo, which is hosted on KWConnect behind a login. The footer currently shows the generic KW mark with "Keller Williams Connected" set as type beside it. She should pull the DBA logo from KWConnect and it replaces `public/brand/keller-williams.webp`.
+5. **The three quoted reviewers.** Zachary Thomas, Didi Aboyeji and Reba Jones. Public reviews, but she should be comfortable with those three names on her homepage. Any can be swapped from the 32 on the profile.
+6. **The MBA.** On her logo and confirmed in the 2026-09-03 session (undergraduate at the University of South Carolina, master's online). The site does not name the MBA institution. She can add it.
+7. **Alpha Kappa Alpha.** The About page names the sorority and the Omega Tau Omega graduate chapter in Fort Mill, from the 2026-09-03 session, and describes the chapter's national targets in her words. She should confirm she wants the chapter named on a business site and that the wording respects the sorority's own rules on members' commercial use of the name.
+8. **The Blooms and Brunch event** is mentioned on the homepage and About page because two Google reviews describe it. Confirm it is something she wants associated with the business.
+9. **The numbers in each story.** All from her case studies. Two need her eye: the Charlotte townhome story says it closed in August 2026 (the 2026-08-28 transcript says "early August"); the Waxhaw story has no year at all, so the closing date is left off.
+10. **Service area.** Twelve towns with pages: Charlotte, Rock Hill, Fort Mill, Tega Cay, Lake Wylie, York, Clover, Indian Land, Waxhaw, Matthews, Pineville, Monroe. Gastonia and Mooresville have stories but no page. She also named Lancaster, Concord, Cornelius, Huntersville, Harrisburg, Columbia and Blythewood in the 2026-08-19 session; none has a page. The Google profile's service area should list the same towns the site does.
+11. **Median prices and drive times on the area pages** are quoted as "in the September 2026 research" and come from the neighborhood guides. They will go stale. Decide whether to keep them dated or remove the numbers.
+12. **LinkedIn and Instagram.** Both are linked from her Keller Williams page but the URLs were not readable. They are null in `src/lib/site.ts` and absent from the footer and schema until supplied.
+13. **YouTube.** The channel is "Candace L. Thompson, Realtor" at @CLTRealtyGroup as of 2026-09-18. The 2026-09-04 session moved her to "LiveMove Charlotte" as a handle and a second site. If the channel handle changes, update `profiles.youtube`.
+
+## Assets still needed
+
+14. **Hero photos for four stories.** The Mooresville duplex, the Rock Hill new construction build, the Rock Hill single level townhome and the Waxhaw purchase have no listing folder in Drive (the townhome folder exists but is empty; the other three were buyer-side). The cards render without an image. Any photo she has of those four fills the gap.
+15. **The hero photo choices.** For the two sensitive stories (the divorce and the loss) an interior was chosen over the exterior and the filename carries no address. For the other five the filename carries the address per Brett's rule and the alt text does not. Two minutes on `/stories/` confirms she is comfortable with each.
+16. **The vector logo.** `all gold.eps` is on her desktop. The site uses the 1422 by 1023 PNG rasterized from it, displayed at 240 pixels, so it is sharp. The vector is wanted for a favicon and print. The current favicon is a drawn crescent on blue.
+17. **The listing video.** `1215 Autumn Cove, Cinematic.mp4` (214 MB, a Monroe listing) sits in the Drive root. It could become a hero video the way Deborah's site has one, cut to forty seconds with the address card removed. Not used yet.
+18. **Additional headshots.** Three files on her desktop failed to transfer per the brand assets log. "My picture.jpg" (3000 by 4200) did land in Drive and was not inspected for this build.
+
+## Decisions to raise
+
+19. **Em dashes.** Her case studies use them constantly. Brett's rule for every site is none, and this build follows it. The copy gate fails on any em dash.
+20. **The Google rating on the page.** 5.0 from 32 is set as type with the read date, and never as markup. Deborah's site shows no rating because hers was 3.0 from 2. If Candace would rather not show a number at all, remove the two sentences in `GoogleProfile.tsx`.
+21. **Fair housing.** The stories describe past clients' circumstances (a family that outgrew a townhome, a widow, a divorce, veterans, a family relocating for a child's college) as narrative. The neighborhood guides' school ratings and buyer profiles were deliberately left out. Local ordinances beyond the federal seven classes were not checked. A pass by Keller Williams Connected's compliance desk before launch is the right move.
+22. **A second site.** The 2026-09-04 session agreed on a separate LiveMove Charlotte site. Nothing here builds toward it; the YouTube channel is linked from this one.
+
+## Technical, before launch
+
+23. **Repository.** Candace's own repo `candacelthompson/candace-thompson-realtor-website` exists (created 2026-08-26, one commit, a README only) and Brett has push access to it. Per the brief this build lives in `brettkmoore/clt-realty-group` (private). Her repo's Vercel project is set to auto-deploy `main`, so nothing was pushed there. At launch: push this code to her repo, or transfer this one to her account and re-point Vercel.
+24. **Domain.** cltrealtygroup.net is hers at GoDaddy and currently redirects to candacelthompson.kw.com. Note that cltrealtygroup.com belongs to an unrelated Texas agent; do not use it.
+25. **Search visibility.** `HIDE_FROM_SEARCH_ENGINES` is `true`. Flip it at launch. Every non-canonical host is also noindexed at the header.
+26. **Contact form.** `CONTACT_WEBHOOK_URL` on Vercel, pointed at her GoHighLevel sub-account's inbound webhook (staged 2026-09-09). Until then the form tells the visitor it is not connected and shows the phone and email.
+27. **Google Business Profile website field** is empty. At launch it becomes cltrealtygroup.net.
+28. **State disclosure links.** The footer links the two commissions' home pages for the North Carolina Working With Real Estate Agents disclosure and the South Carolina Disclosure of Real Estate Brokerage Relationships. Her own PDFs of each, hosted on this domain, would be sturdier.
+29. **Keller Williams footer wording.** The ownership statement is the one on kwri.kw.com on 2026-09-18. The Identity and Style Guide was read from a 2018 mirror; KW Connected should confirm against the current guide on KWConnect.
+
+## Process notes
+
+- Brett's brief was treated as the approved design and the Deborah Rose repo as the approved architecture. No brainstorming questions were asked because the session was non-interactive; the decisions above are the ones a reviewer would have been asked about.
+- The seven transcripts were exported from Google Docs through Chrome and kept out of the repo. The case studies and dossiers stay in Drive.
