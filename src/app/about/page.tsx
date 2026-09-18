@@ -6,7 +6,7 @@ import { ClosingAsk } from '@/components/ClosingAsk'
 import { FactList } from '@/components/FactList'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { breadcrumb } from '@/lib/schema'
-import { agent, business, tagline } from '@/lib/site'
+import { agent, business, production, tagline } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'About Candace L. Thompson, MBA',
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 const CREDENTIALS = [
   ...business.licenses.map((l) => ({ label: `${l.state} real estate license`, value: `${l.commission}, ${l.number}` })),
   { label: 'Brokerage', value: `${business.brokerage.name}, ${business.brokerage.address}` },
-  { label: 'Education', value: `Master of Business Administration. Undergraduate degree, ${agent.alumniOf}.` },
+  { label: 'Education', value: `MBA, ${agent.mba}. BS, ${agent.alumniOf}.` },
+  { label: 'Record', value: `${production.totalSales} homes sold over ${production.yearsExperience} years, ${production.salesLast12Months} in the last twelve months, per Zillow on ${production.zillowRating.readOn}.` },
   { label: 'REALTOR®', value: 'Member of the National Association of REALTORS® and bound by its Code of Ethics' },
   { label: 'Community', value: agent.memberships[0] },
 ]
@@ -63,13 +64,16 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-6 text-lg/8 text-ink-soft">
             <p>
               I was born and raised in Rock Hill, South Carolina, and I live there now. My office is Keller Williams
-              Connected in Fort Mill, on the north side of town near the Charlotte line, and most of my closings are in
-              Rock Hill and the rest of York County, with Charlotte and its towns across the line. I hold licenses in both states because my clients do
+              Connected in Fort Mill, on the north side of town near the Charlotte line, and most of my {production.totalSales}
+              closings are in Rock Hill and the rest of York County, with Charlotte and its towns across the line. I hold licenses in both states because my clients do
               not stop at the state line, and neither does the math on where to buy.
             </p>
             <p>
               I did my undergraduate degree at the University of South Carolina in Columbia, which is why my market
-              still reaches that far south when a client needs it to, and I earned my MBA online while I was working.
+              still reaches that far south when a client needs it to, and I earned my MBA from Bellevue University
+              while I was working. The degree rarely comes up with clients and I do not lead with it. What it changed
+              is how I read a market: closed sales the way an analyst reads a balance sheet, a price set for what
+              buyers will actually pay, and a negotiation structured around your numbers.
               For years real estate was the job I did alongside another one. A client I had just closed with heard
               me say I had to get to my other job and could not believe it. He said he had felt like my only client
               every time he called. That is still the standard I hold myself to, and now I do this full time.
@@ -81,10 +85,8 @@ export default function AboutPage() {
               is to keep going and adapt rather than wait for the world to make sense again.
             </p>
             <p>
-              The line on my homepage is one I have said to clients for years. Home is the one place where nobody
-              is judging you, where you can rest and be yourself and feel safe enough to plan the rest of your life.
-              Your home should be your sanctuary. Finding that for a buyer, or selling one with the care it deserves,
-              is the whole job.
+              I have said one thing to clients for nineteen years: your home should be your sanctuary. Finding that
+              for a buyer, or selling one with the care it deserves, is the whole job.
             </p>
             <h2 className="mt-16 font-display text-3xl text-ink">CLT Realty Group is one person.</h2>
             <p>

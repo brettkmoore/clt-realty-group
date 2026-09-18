@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 import { ContactTrigger } from '@/components/ContactTrigger'
 import { HeroVideo, HERO_POSTER } from '@/components/HeroVideo'
-import { agent, business, tagline } from '@/lib/site'
+import { agent, business, production } from '@/lib/site'
 
 /**
  * ===================================================================
@@ -62,12 +62,13 @@ export function Hero() {
             Rock Hill, Fort Mill, Charlotte and the Carolina towns around them
           </p>
           <h1 className="mt-3 font-display text-[2.375rem]/[1.04] tracking-[-0.01em] text-pretty text-cream sm:text-[3.25rem]/[1.03] lg:text-[4rem]/[1.02]">
-            {tagline}
+            A real estate agent who thinks like an analyst.
           </h1>
           <p className="mt-4 max-w-xl text-base/7 text-cream/90 sm:text-lg/7">
-            I am Candace L. Thompson, a Rock Hill native with Keller Williams Connected in Fort Mill. I sell homes on
-            both sides of the state line, and I have never rushed a client through a decision to get to closing
-            faster. The home has to be right, and the payment has to let you sleep.
+            I&rsquo;m Candace L. Thompson, a Rock Hill native. I earned an MBA while I was selling houses, and it
+            changed how I do this. I read a neighborhood&rsquo;s closed sales the way an analyst reads a balance sheet,
+            price for what buyers will actually pay, and structure a negotiation around your numbers.{' '}
+            {production.yearsExperience} years and {production.totalSales} closings on both sides of the state line.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-5">
             <figure className="flex shrink-0 flex-col items-center">

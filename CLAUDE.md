@@ -48,6 +48,15 @@ Brett, 2026-09-18: "All of these improvements that we're making for the Deborah 
 - **The form is mostly taps, one open box, with progressive disclosure.** Buying, selling or both; sellers see address, bedrooms, bathrooms and an improvements note framed as their market snapshot; buyers see financing (including "Started the process"), location and a price band; then a timeline and one optional "anything else" box. A buyer never sees the seller fields.
 - **The IQ quiz is a lead capture instrument.** Six scenarios per path, every one from her own case studies with the explanation in her voice, a result tier where nobody fails, then contact capture that posts the score and every answer to the same `/api/contact/` as the form. Modeled on yournextstepteam.com and buddybuck.com, both read from their source. No school is rated in any question.
 
+## The second review call, 2026-09-18
+
+- **Proof below the fold, numbers as type.** Her record from Zillow (304 sold, 17 in the last twelve months, 19 years, 5.0 from 19) sits under the hero, with the five specialties, both licenses and both degrees. Update the figures in `production` in `src/lib/site.ts` with the read date. **Never publish a derived dollar volume**; only a figure Candace supplies.
+- **The blue is an accent, never a background.** Brett: "That brand blue should be much more subtly used, not for backgrounds." Bands are white, paper or near-black.
+- **The MBA is translated, never waved.** The hero says "thinks like an analyst" and the paragraph says what the degree changed. Do not add "MBA" to a headline. Candace would rather be judged on experience and knowledge.
+- **Her line is a quote, not the tagline.** "Your home should be your sanctuary" appears attributed on the About band and the About page, never as the H1.
+- **Contractions in her voice.** "I'm," never "I am." Keller Williams Connected stays in the footer and schema, out of the hero.
+- **Reviews are an asset here.** 5.0 on Google and Zillow; a testimonials section is correct on this site. Quotes verbatim, attributed as signed, confirmed by Candace.
+
 ## The pink, exactly
 
 The crescent in her logo samples at #ff04f8. White type on it measures 3.17:1. Brett, 2026-09-18: "just do a slight adjustment on her pink color to the point where we can get it a 4.5 to one ratio." The hue is held and the lightness lowered until white clears with a small margin: **#d103cc, 4.57:1 with white**; hover **#ad02a9, 6.20:1**. There is one pink on the site. Do not reintroduce the raw logo value outside the logo artwork, and do not "refine" the pink toward a different hue.

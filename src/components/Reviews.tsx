@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container'
 import { Eyebrow, Heading } from '@/components/Text'
-import { gbp } from '@/lib/site'
+import { gbp, production, profiles } from '@/lib/site'
 import { reviews } from '@/content/reviews'
 
 /**
@@ -18,10 +18,12 @@ export function Reviews() {
         <div className="max-w-2xl">
           <Eyebrow>In their words</Eyebrow>
           <Heading id="reviews-heading" className="mt-6">
-            What clients say when they thought I was their only client.
+            Five stars on Google and on Zillow.
           </Heading>
           <p className="mt-6 text-lg/8 text-ink-soft">
-            Three of the {gbp.rating.count} reviews on my Google profile, quoted as they were written.
+            {gbp.rating.value} from {gbp.rating.count} reviews on Google and {production.zillowRating.value} from{' '}
+            {production.zillowRating.count} on Zillow, as of {production.zillowRating.readOn.slice(0, 4)}. Three of them, quoted as they were
+            written.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 border-t border-rule pt-12 lg:grid-cols-3">
@@ -39,9 +41,12 @@ export function Reviews() {
             </figure>
           ))}
         </div>
-        <p className="mt-12">
+        <p className="mt-12 flex flex-wrap gap-x-8 gap-y-3">
           <a href={gbp.reviewsUrl} target="_blank" rel="noopener noreferrer" className="tap text-[13px] font-semibold tracking-[0.14em] uppercase text-ink border-b border-ink/25 pb-1 hover:border-ink">
             Read all {gbp.rating.count} on Google
+          </a>
+          <a href={profiles.zillow} target="_blank" rel="noopener noreferrer" className="tap text-[13px] font-semibold tracking-[0.14em] uppercase text-ink border-b border-ink/25 pb-1 hover:border-ink">
+            Read all {production.zillowRating.count} on Zillow
           </a>
         </p>
       </Container>

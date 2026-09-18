@@ -122,6 +122,15 @@ Written after the first build on 2026-09-18. What the site currently says, where
 - **Two calls to action, as built:** primary "Talk with Candace" opens the form (information capture); secondary "Or call or text (704) 778-0779" as a plain link beside it. Alternatives worth Brett's eye: "Get my market snapshot" for sellers and "Tell me what you're looking for" for buyers as page-specific primaries.
 - **Still to decide:** whether the quiz belongs in the header nav (currently the homepage section and the footer link it), and the wording of the primary button.
 
+## From the second review call, 2026-09-18, built
+
+- **Below the fold is proof now.** 304 homes sold, 17 in the last twelve months, 19 years, 5.0 from 19 on Zillow and 5.0 from 32 on Google, the five specialties, both licenses, MBA from Bellevue University and BS from the University of South Carolina. All read live from her Zillow profile on 2026-09-18 and set as type. **Career sales volume is not published**: multiplying 304 by the $355,000 average would invent a figure. Candace supplies a career volume if she wants one shown. Awards: none found on Zillow, Google or her Keller Williams page; she supplies any she wants listed.
+- **The blue is an accent only.** Every blue background band is gone; article and quiz headers are near-black.
+- **Copy cut as asked:** "the payment has to let you sleep," "What it is like to have me on your side," the three "how I work" items, "nobody is judging you," "I am" for "I'm," and Keller Williams Connected out of the hero sentence. "Your home should be your sanctuary" stays as her quote on the About band and About page, no longer the headline.
+- **The MBA as a capability.** Hero headline: "A real estate agent who thinks like an analyst." The paragraph says what the degree changed rather than that she has it. Brett and Candace should read that sentence and push back on the word "analyst" if it is not her.
+- **Headshot.** Two professional portraits exist in the Drive: the pink blazer studio portrait (1200 by 1600, previously on the site) and the pink cardigan outdoor portrait (3000 by 4200, "My picture.jpg", now on the site). Brett said the blazer was not the one they want; the cardigan is the only other. Both are in `public/about/`; one line in `src/lib/site.ts` swaps them. The tracker lists Facebook albums "Profile pictures" and "Business Pic" that were never ingested; if the one they want is there, it needs to be uploaded to the Drive.
+- **Zillow reviews.** The rating and count are on the site. The nineteen review texts could not be read from Zillow in this session (the reviews tab loads nothing readable to automation); the three quotes on the homepage remain from Google. Candace confirms which quotes she wants used, from either profile.
+
 ## Decisions to raise
 
 - **The pink.** The logo crescent is #ff04f8; white on it is 3.17:1. Per Brett's instruction the hue was held and the lightness lowered to #d103cc, 4.57:1 with white (hover #ad02a9, 6.20:1). It is visibly slightly less electric than the logo. Brett can push back if he wants the raw value somewhere other than the logo artwork.

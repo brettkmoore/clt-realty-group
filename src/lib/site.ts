@@ -85,6 +85,23 @@ export const business = {
     'Candace L. Thompson, MBA, helps buyers and sellers in Rock Hill, Fort Mill, York and the rest of York County, across the line in Charlotte, and in Waxhaw, Matthews, Pineville and Monroe. A Rock Hill native, licensed in both Carolinas, with Keller Williams Connected in Fort Mill.',
 } as const
 
+/**
+ * Production, read live from her Zillow profile on 2026-09-18
+ * (zillow.com/profile/Candace%20Thompson). Set as type, never as a card.
+ * No career dollar volume is published: multiplying the total by the
+ * average would invent a figure, and the average is drawn from a recent
+ * subset. Candace supplies a career volume if she wants one shown.
+ */
+export const production = {
+  totalSales: 304,
+  salesLast12Months: 17,
+  yearsExperience: 19,
+  priceRange: '$60,000 to $625,000',
+  averagePrice: '$355,000',
+  zillowRating: { value: '5.0', count: 19, readOn: '2026-09-18' },
+  specialties: ["Buyer's agent", 'Listing agent', 'Relocation', 'Foreclosure', 'New construction'],
+} as const
+
 export const agent = {
   name: 'Candace L. Thompson',
   displayName: 'Candace L. Thompson, MBA',
@@ -92,11 +109,20 @@ export const agent = {
   givenName: 'Candace',
   familyName: 'Thompson',
   jobTitle: 'REALTOR®, CLT Realty Group at Keller Williams Connected',
-  headshot: '/about/candace-l-thompson.webp',
+  /**
+   * Two professional headshots are in her Drive. Brett, 2026-09-18: the
+   * pink blazer portrait on the site "is not the one they want," so the
+   * outdoor pink cardigan portrait (3000 by 4200 source, "My picture.jpg")
+   * is shown until they choose. The other is kept at
+   * /about/candace-l-thompson.webp. Swap the three lines below to change.
+   */
+  headshot: '/about/candace-l-thompson-cardigan.webp',
   headshotWidth: 1200,
-  headshotHeight: 1600,
-  headshotAlt: 'Candace L. Thompson, real estate agent for Charlotte, Fort Mill and Rock Hill, in a pink blazer',
+  headshotHeight: 1680,
+  headshotAlt: 'Candace L. Thompson, real estate agent for Rock Hill, Fort Mill and Charlotte, in a pink cardigan outdoors',
   degrees: ['MBA'],
+  /** From her Zillow bio, read 2026-09-18. */
+  mba: 'Bellevue University',
   alumniOf: 'University of South Carolina',
   memberships: ['Alpha Kappa Alpha Sorority, Incorporated, Omega Tau Omega chapter, Fort Mill, South Carolina'],
 } as const
@@ -138,12 +164,18 @@ export const profiles = {
   kw: 'https://candacelthompson.kw.com/',
   facebook: 'https://www.facebook.com/CLTRealtyGroup',
   youtube: 'https://www.youtube.com/@CLTRealtyGroup',
+  zillow: 'https://www.zillow.com/profile/Candace%20Thompson',
   linkedin: null as string | null,
   instagram: null as string | null,
   googleMaps: gbp.mapsUrl,
 } as const
 
-/** The line the homepage is built on. Chosen with Brett on 2026-08-28. */
+/**
+ * Her line. Chosen with Brett on 2026-08-28 as the homepage headline;
+ * demoted on 2026-09-18 (Brett: a good quote for Candace, not the tagline
+ * for the business). It appears as her own words, attributed, on the
+ * homepage About band and the About page.
+ */
 export const tagline = 'Your home should be your sanctuary.'
 
 export type Area = {

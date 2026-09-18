@@ -103,7 +103,7 @@ export function agentNode(): SchemaNode {
     founder: { '@id': PERSON_ID },
     employee: { '@id': PERSON_ID },
     parentOrganization: { '@id': BROKERAGE_ID },
-    sameAs: [gbp.mapsUrl, profiles.kw, profiles.facebook, profiles.youtube].filter(Boolean),
+    sameAs: [gbp.mapsUrl, profiles.kw, profiles.zillow, profiles.facebook, profiles.youtube].filter(Boolean),
     knowsLanguage: ['en-US'],
   }
 }
@@ -136,7 +136,7 @@ export function personNode(): SchemaNode {
         identifier: l.number,
         recognizedBy: { '@type': 'Organization', name: l.commission, url: l.url },
       })),
-      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Master of Business Administration' },
+      { '@type': 'EducationalOccupationalCredential', credentialCategory: 'degree', name: 'Master of Business Administration', recognizedBy: { '@type': 'CollegeOrUniversity', name: agent.mba } },
     ],
     homeLocation: placeNode('Rock Hill', 'SC'),
     workLocation: placeNode('Fort Mill', 'SC'),
@@ -146,7 +146,7 @@ export function personNode(): SchemaNode {
       'New construction purchases',
       'Pricing a home that did not sell the first time',
     ],
-    sameAs: [profiles.kw, profiles.facebook, profiles.youtube, profiles.linkedin, profiles.instagram].filter(Boolean),
+    sameAs: [profiles.kw, profiles.zillow, profiles.facebook, profiles.youtube, profiles.linkedin, profiles.instagram].filter(Boolean),
     mainEntityOfPage: `${siteUrl}/about/`,
   }
 }

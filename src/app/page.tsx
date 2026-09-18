@@ -1,10 +1,8 @@
 import type { Metadata } from 'next'
-import { HandRaisedIcon, ScaleIcon, HomeModernIcon } from '@heroicons/react/20/solid'
-
 import { Container } from '@/components/Container'
 import { Hero } from '@/components/Hero'
 import { Button } from '@/components/Button'
-import { FeatureThree } from '@/components/FeatureThree'
+import { Credentials } from '@/components/Credentials'
 import { AreaGrid } from '@/components/AreaGrid'
 import { StoryCard } from '@/components/StoryCard'
 import { GoogleProfile } from '@/components/GoogleProfile'
@@ -15,41 +13,21 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import { faqNode } from '@/lib/schema'
 import { homeFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
+import { agent, business, gbp, production, tagline } from '@/lib/site'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
 /**
- * The three things she brings that a search result cannot. Copy derived
- * from her own case studies and what she said in the August and
- * September 2026 sessions; the first person is hers.
+ * The figures below the fold. Zillow, read 2026-09-18, plus the Google
+ * profile. Set as type. Update src/lib/site.ts and these follow.
  */
-const HOW = [
-  {
-    name: 'I will not rush you.',
-    description:
-      'A client once told me he had assumed I had no other job because every time he called, I answered, and he felt like my only client. That is the standard. This is one of the largest decisions you will make, and you get my attention until it is right, not until it closes.',
-    href: '/buyers/',
-    linkLabel: 'How I work with buyers',
-    icon: HandRaisedIcon,
-  },
-  {
-    name: 'The payment has to let you sleep.',
-    description:
-      'I sold homes through the recession and sat across from people who were losing them. You can stretch a little. You do not get too wild. When I know a payment will keep you up at night, we find a different house, because I want you to still own your home in ten years.',
-    href: '/stories/',
-    linkLabel: 'Read the stories',
-    icon: ScaleIcon,
-  },
-  {
-    name: 'Whatever the house needs, I do.',
-    description:
-      'I have filmed a walkthrough for buyers who could not get in the door, checked on an empty house every two weeks until its owners arrived from New York, and swept out a rental myself so it could be photographed. The plan is whatever gets you the right outcome.',
-    href: '/sellers/',
-    linkLabel: 'How I work with sellers',
-    icon: HomeModernIcon,
-  },
+const FIGURES = [
+  { label: 'homes sold, career', value: String(production.totalSales) },
+  { label: 'homes sold in the last twelve months', value: String(production.salesLast12Months) },
+  { label: 'years in real estate', value: String(production.yearsExperience) },
+  { label: `on Zillow from ${production.zillowRating.count} reviews, and on Google from ${gbp.rating.count}`, value: production.zillowRating.value },
 ]
 
 export default async function Home() {
@@ -62,30 +40,49 @@ export default async function Home() {
       <SchemaGraph nodes={[faqNode(homeFaq)]} />
       <Hero />
 
-      {/* The one deep blue band on the page: her line, said plainly. */}
-      <section aria-labelledby="sanctuary-heading" className="bg-blue-deep">
-        <Container className="py-20 sm:py-28">
-          <div className="max-w-3xl">
-            <p className="text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/60">Why I do this</p>
-            <h2 id="sanctuary-heading" className="mt-6 font-display text-[2rem]/[1.15] text-cream sm:text-[2.75rem]/[1.12]">
-              Home is the one place where nobody is judging you. Where you can rest, and be yourself, and feel safe
-              enough to plan the rest of your life.
+      {/*
+       * Below the fold: proof. Brett, 2026-09-18: "this section of the
+       * website right below the fold should show Candace's excellence, her
+       * expertise. More stats, how many homes she sold, awards she's won."
+       * The numbers are from her Zillow profile, read 2026-09-18, set as
+       * type with hairlines. No cards, no pills, no boxes, no derived
+       * dollar volume.
+       */}
+      <section aria-labelledby="record-heading" className="bg-field py-24 sm:py-32">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-base/7 font-semibold text-blue">The record</p>
+            <h2 id="record-heading" className="mt-2 font-display text-[2.25rem]/[1.1] text-pretty text-ink sm:text-5xl/[1.05]">
+              {production.yearsExperience} years. {production.totalSales} homes sold. Two states.
             </h2>
-            <p className="mt-8 max-w-2xl text-lg/8 text-cream/80">
-              That is what I mean when I say your home should be your sanctuary. I have said it to clients for years.
-              My job is to help you find the one that will be that for you, or to sell the one that was, with the care
-              that deserves.
+            <p className="mt-6 text-lg/8 text-ink-soft">
+              Every number here is on my public record. I sell from $60,000 starter condos to $625,000 relocations,
+              on both sides of the state line, and most of the people I work with came from someone I already helped.
             </p>
           </div>
+          <div className="mt-16">
+            <Credentials items={FIGURES} />
+          </div>
+          <dl className="mt-16 grid grid-cols-1 gap-x-8 gap-y-8 border-t border-rule pt-10 sm:grid-cols-3">
+            <div>
+              <dt className="text-[13px] font-semibold tracking-[0.08em] uppercase text-blue">What I do</dt>
+              <dd className="mt-3 text-base/7 text-ink">{production.specialties.join('. ')}.</dd>
+            </div>
+            <div>
+              <dt className="text-[13px] font-semibold tracking-[0.08em] uppercase text-blue">Licensed in</dt>
+              <dd className="mt-3 text-base/7 text-ink">
+                {business.licenses.map((l) => `${l.state} (${l.number})`).join(' and ')}, with {business.brokerage.name}.
+              </dd>
+            </div>
+            <div>
+              <dt className="text-[13px] font-semibold tracking-[0.08em] uppercase text-blue">Education</dt>
+              <dd className="mt-3 text-base/7 text-ink">
+                MBA, {agent.mba}. BS, {agent.alumniOf}.
+              </dd>
+            </div>
+          </dl>
         </Container>
       </section>
-
-      <FeatureThree
-        eyebrow="How I work"
-        heading="What it is like to have me on your side."
-        items={HOW}
-        className="py-24 sm:py-32"
-      />
 
       {/* Tailwind Plus, Blog sections, "Three-column with images": the section around three StoryCards. */}
       <section aria-labelledby="stories-heading" className="bg-paper py-24 sm:py-32">
@@ -127,20 +124,17 @@ export default async function Home() {
               About
             </p>
             <h2 className="mt-2 font-display text-[2.5rem]/[1.05] text-pretty text-ink sm:text-5xl/[1.05] lg:text-6xl/[1.04]">
-              I am Candace L. Thompson.
+              I&rsquo;m Candace L. Thompson.
             </h2>
             <p className="mt-8 text-xl/8 text-ink sm:text-2xl/9">
-              Born and raised in Rock Hill. Office in Fort Mill. Licensed on both sides of the line, and now in real
-              estate full time after years of doing it alongside another job without a single client noticing.
+              Born and raised in Rock Hill, fifteen minutes from Charlotte. Nineteen years in real estate on both
+              sides of the line, an MBA earned along the way, and clients who came back for their second and third
+              homes.
             </p>
-            <div className="mt-10 max-w-2xl space-y-6 text-lg/8 text-ink-soft">
-              <p>
-                I did my undergraduate degree at the University of South Carolina and my MBA online while I was
-                working. I am a member of Alpha Kappa Alpha Sorority, Incorporated, through the Omega Tau Omega
-                chapter in Fort Mill, and the events I host for the community, like the brunch and bouquet afternoon
-                my past clients still talk about, come out of the same place my business does.
-              </p>
-            </div>
+            <blockquote className="mt-10 max-w-2xl border-l-2 border-pink pl-6">
+              <p className="font-display text-2xl/[1.3] text-ink sm:text-[1.75rem]/[1.3]">&ldquo;{tagline}&rdquo;</p>
+              <footer className="mt-3 text-sm/6 text-ink-soft">What I have told clients for years, and still mean.</footer>
+            </blockquote>
             <p className="mt-10">
               <Button variant="quiet" href="/about/">
                 More about me

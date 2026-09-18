@@ -17,7 +17,7 @@
  * (02_Brand_Assets/Logos/clt-realty-logo-primary.png, read pixel by pixel
  * on 2026-09-18): the palmetto and wordmark blue is #0013f5, the
  * crescent moon is #ff04f8, the skyline slate is #5b7078. The blue is the
- * primary: nav, links, eyebrows, labels and the one deep band per page.
+ * primary as an accent: nav, links, eyebrows and labels. Never a band.
  * The pink is the one action color, the call to action, and the accent.
  *
  * THE PINK, ADJUSTED. White type on the raw crescent pink measures 3.17:1,
@@ -45,12 +45,16 @@
   --color-ink-faint: #6b6b78;
   --color-ink-hover: #2a2a33;
   --color-rule: #e3e4ec;
-  --color-night: #0a0f5c;
+  --color-night: #0f0f14;
   --color-cream: #ffffff;
 
-  /* The logo blue, 8.71:1 on white, and a deep blue for the one band per page. */
+  /*
+   * The logo blue, 8.71:1 on white. An accent only: eyebrows, labels,
+   * links, the header underline, chip fills. Never a background band.
+   * Brett, 2026-09-18: "That brand blue should be much more subtly used,
+   * not for backgrounds." Backgrounds are white, paper and near-black.
+   */
   --color-blue: #0013f5;
-  --color-blue-deep: #0a0f5c;
   --color-blue-soft: #e9ebfe;
 
   /* The skyline slate from the logo, 5.21:1 on white. */

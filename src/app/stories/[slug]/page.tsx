@@ -86,8 +86,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         {/*
          * The header, modeled on buddybuck.com's blog (Brett, 2026-09-18):
          * a dark band holds the back link, the category, the headline in
-         * white and a thin metadata row. The band is her deep blue, never
-         * the pink. The photograph sits below the headline and breaks the
+         * white and a thin metadata row. The band is near-black, never a
+         * brand color (Brett, 2026-09-18: the blue is an accent, not a
+         * background). The photograph sits below the headline and breaks the
          * seam between the band and the white body, half in each,
          * contained and centered with rounded corners. The figure's negative
          * top margin is the depth it reaches into the band; the band's
@@ -95,7 +96,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
          * metadata row, so the row never touches the photograph at 375 wide. The category is a real link to
          * the filtered index, never a pill.
          */}
-        <header className="bg-blue-deep pt-10 pb-[9.5rem] sm:pt-14 sm:pb-[12.5rem] lg:pb-[15.5rem]">
+        <header className="bg-night pt-10 pb-[9.5rem] sm:pt-14 sm:pb-[12.5rem] lg:pb-[15.5rem]">
           <Container>
             <div className="mx-auto max-w-3xl">
               <Link href="/stories/" className="tap text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/70 hover:text-cream">

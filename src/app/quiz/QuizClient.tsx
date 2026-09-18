@@ -78,7 +78,7 @@ export function QuizClient() {
 
   return (
     <>
-      <section className="bg-blue-deep py-16 sm:py-20">
+      <section className="bg-night py-16 sm:py-20">
         <Container>
           <div className="max-w-2xl">
             <p className="text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/70">Real Estate IQ Quiz</p>
