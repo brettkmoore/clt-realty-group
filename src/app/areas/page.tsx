@@ -11,7 +11,7 @@ import { areas } from '@/lib/site'
 import { getStories } from '@/lib/stories'
 
 export const metadata: Metadata = {
-  title: 'Areas served: Charlotte and the Carolina towns around it',
+  title: 'Areas served: Rock Hill, Fort Mill, Charlotte and the Carolina towns around them',
   description:
     'The twelve towns Candace L. Thompson serves across Charlotte and York, Lancaster, Union and Mecklenburg counties, with what she tells buyers about each and the stories from there.',
   alternates: { canonical: '/areas/' },
@@ -24,8 +24,8 @@ export default async function AreasPage() {
       <SchemaGraph nodes={[breadcrumb([{ name: 'Home', path: '/' }, { name: 'Areas', path: '/areas/' }])]} />
       <InteriorHero eyebrow="Areas" title="Twelve towns, two states, one market.">
         <p>
-          Charlotte, and the towns that flank it on both sides of the state line. I grew up in Rock Hill and live there
-          now, my office is in Fort Mill, and I go wherever a client decides they want to be. Each page carries what I
+          Rock Hill, where I grew up and still live and where most of my closings are. Fort Mill, where my office is. Charlotte
+          across the line, and the towns that flank all three. I go wherever a client decides they want to be. Each page carries what I
           tell buyers about the place, the neighborhoods people ask about, and the stories from there.
         </p>
       </InteriorHero>

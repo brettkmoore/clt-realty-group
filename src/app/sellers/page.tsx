@@ -14,7 +14,7 @@ import { sellersFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
 
 export const metadata: Metadata = {
-  title: 'Selling a home in Charlotte, Fort Mill, Rock Hill or the towns around them',
+  title: 'Selling a home in Rock Hill, Fort Mill, Charlotte or the towns around them',
   description:
     'How Candace L. Thompson sells homes on both sides of the state line: a price set for what buyers will actually see, the work that lets them see it, and a number she holds once it is right. Expired listings welcome.',
   alternates: { canonical: '/sellers/' },
@@ -85,7 +85,7 @@ export default async function SellersPage() {
   return (
     <>
       <SchemaGraph nodes={[faqNode(sellersFaq), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Sellers', path: '/sellers/' }])]} />
-      <InteriorHero eyebrow="Sellers" title="Selling a home in Charlotte or the Carolina towns around it.">
+      <InteriorHero eyebrow="Sellers" title="Selling a home in Rock Hill, Fort Mill, Charlotte or the towns around them.">
         <p>
           Most of the sellers on this site had something working against them: a listing that had already failed,
           a house buyers could not see past, a tenant, a distance, a loss. The plan is what carried each one, and I

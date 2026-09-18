@@ -13,7 +13,7 @@ import { getStories } from '@/lib/stories'
 export const metadata: Metadata = {
   title: 'Stories from the field',
   description:
-    'Real transactions in Charlotte, Rock Hill, Waxhaw, Gastonia, Mooresville and the towns between, told by Candace L. Thompson without client names or addresses, with the numbers that mattered.',
+    'Real transactions in Rock Hill, Charlotte, Waxhaw, Gastonia, Mooresville and the towns between, told by Candace L. Thompson without client names or addresses, with the numbers that mattered.',
   alternates: { canonical: '/stories/' },
 }
 

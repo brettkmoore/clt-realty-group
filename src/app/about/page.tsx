@@ -63,8 +63,8 @@ export default function AboutPage() {
           <div className="max-w-3xl space-y-6 text-lg/8 text-ink-soft">
             <p>
               I was born and raised in Rock Hill, South Carolina, and I live there now. My office is Keller Williams
-              Connected in Fort Mill, on the north side of town near the Charlotte line, and I sell the Charlotte
-              market and the South Carolina towns around it. I hold licenses in both states because my clients do
+              Connected in Fort Mill, on the north side of town near the Charlotte line, and most of my closings are in
+              Rock Hill and the rest of York County, with Charlotte and its towns across the line. I hold licenses in both states because my clients do
               not stop at the state line, and neither does the math on where to buy.
             </p>
             <p>

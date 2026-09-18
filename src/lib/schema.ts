@@ -141,7 +141,7 @@ export function personNode(): SchemaNode {
     homeLocation: placeNode('Rock Hill', 'SC'),
     workLocation: placeNode('Fort Mill', 'SC'),
     knowsAbout: [
-      'Residential real estate in Charlotte, North Carolina and York County, South Carolina',
+      'Residential real estate in York County, South Carolina and Charlotte, North Carolina',
       'Relocation to the Charlotte area from out of state',
       'New construction purchases',
       'Pricing a home that did not sell the first time',

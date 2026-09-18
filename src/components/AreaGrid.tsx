@@ -21,11 +21,11 @@ export function AreaGrid({ className = 'py-24 sm:py-32' }: { className?: string 
             Where I work
           </h2>
           <p className="mt-2 font-display text-[2.25rem]/[1.1] text-pretty text-ink sm:text-5xl/[1.05]">
-            Charlotte, and both sides of the state line around it.
+            Rock Hill, Fort Mill, Charlotte, and both sides of the state line.
           </p>
           <p className="mt-6 text-lg/8 text-ink-soft">
-            I grew up in Rock Hill, I live there now, and my office is in Fort Mill. Most of my closings are in York
-            County and south Charlotte, and I go wherever a client decides they want to be. Each town has its own page
+            I grew up in Rock Hill, I live there now, and most of my closings are there and in the rest of York County. My
+            office is in Fort Mill, I sell across the line in Charlotte, and I go wherever a client decides they want to be. Each town has its own page
             with what I tell buyers about it and the stories from there.
           </p>
         </div>

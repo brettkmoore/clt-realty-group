@@ -9,7 +9,7 @@ export const homeFaq: FaqItem[] = [
   {
     question: 'Which areas do you cover?',
     answer:
-      'Charlotte and the towns that flank it on both sides of the state line. On the South Carolina side that is Rock Hill, where I live, Fort Mill, where my office is, Tega Cay, Lake Wylie, York, Clover and Indian Land. On the North Carolina side, Waxhaw, Matthews, Pineville, Monroe, Gastonia and the towns north of the city when a client needs me there.',
+      'Rock Hill, where I live and where most of my closings are, Fort Mill, where my office is, and the rest of York County: York, Tega Cay, Lake Wylie and Clover, plus Indian Land next door. Across the line, Charlotte and the towns that flank it: Waxhaw, Matthews, Pineville, Monroe, Gastonia, and Mooresville when a client needs me there.',
   },
   {
     question: 'Are you licensed in both North Carolina and South Carolina?',

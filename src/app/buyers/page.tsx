@@ -14,7 +14,7 @@ import { buyersFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
 
 export const metadata: Metadata = {
-  title: 'Buying a home in Charlotte, Fort Mill, Rock Hill or the towns around them',
+  title: 'Buying a home in Rock Hill, Fort Mill, Charlotte or the towns around them',
   description:
     'How Candace L. Thompson works with buyers on both sides of the state line: a budget you can carry, the North Carolina and South Carolina math run for your household, inspections she attends, and a second negotiation when the report earns one.',
   alternates: { canonical: '/buyers/' },
@@ -85,7 +85,7 @@ export default async function BuyersPage() {
   return (
     <>
       <SchemaGraph nodes={[faqNode(buyersFaq), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Buyers', path: '/buyers/' }])]} />
-      <InteriorHero eyebrow="Buyers" title="Buying a home in Charlotte or the Carolina towns around it.">
+      <InteriorHero eyebrow="Buyers" title="Buying a home in Rock Hill, Fort Mill, Charlotte or the towns around them.">
         <p>
           The house is the part you will fall in love with. The payment, the state line and the inspection are the
           parts that decide whether you still love it in ten years, and those are the parts I will not let you rush.

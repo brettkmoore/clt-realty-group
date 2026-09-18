@@ -7,7 +7,7 @@ county: "York County"
 state: "SC"
 area: "rock-hill"
 role: "Seller story"
-summary: "A young family had outgrown a two bedroom townhome that needed updates. No repairs, no staging, no paid prep. We priced it as-is at $220,000 and it sold in five days at $210,000, because a single level layout is scarce here."
+summary: "A family had outgrown a two bedroom townhome that needed updates. No repairs, no staging, no paid prep. We priced it as-is at $220,000 and it sold in five days at $210,000, because a single level layout is scarce here."
 image: null
 alt: null
 facts:

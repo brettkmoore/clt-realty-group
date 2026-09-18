@@ -59,7 +59,7 @@ export function Hero() {
             className="size-24 rounded-full object-cover object-top ring-2 ring-cream/80"
           />
           <p className="mt-6 text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/85">
-            Charlotte, Fort Mill, Rock Hill and the Carolina towns around them
+            Rock Hill, Fort Mill, Charlotte and the Carolina towns around them
           </p>
           <h1 className="mt-4 font-display text-[2.5rem]/[1.04] tracking-[-0.01em] text-pretty text-cream sm:text-6xl/[1.03] lg:text-7xl/[1.02]">
             {tagline}

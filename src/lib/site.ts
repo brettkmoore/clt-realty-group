@@ -82,7 +82,7 @@ export const business = {
    */
   mailingAddress: null as string | null,
   description:
-    'Candace L. Thompson, MBA, helps buyers and sellers across Charlotte and the South Carolina towns around it: Rock Hill, Fort Mill, Tega Cay, Lake Wylie, York, Clover and Indian Land, and Waxhaw, Matthews, Pineville and Monroe on the North Carolina side. A Rock Hill native with Keller Williams Connected in Fort Mill.',
+    'Candace L. Thompson, MBA, helps buyers and sellers in Rock Hill, Fort Mill, York and the rest of York County, across the line in Charlotte, and in Waxhaw, Matthews, Pineville and Monroe. A Rock Hill native, licensed in both Carolinas, with Keller Williams Connected in Fort Mill.',
 } as const
 
 export const agent = {
@@ -158,18 +158,22 @@ export type Area = {
 }
 
 /**
- * The service area. Charlotte first, then the South Carolina towns in the
- * order she names them, then the North Carolina towns that flank
- * Charlotte to the south and east. Each has a page at /areas/<slug>/.
- * Gastonia and Mooresville have stories but no page yet.
+ * The service area, in the order her business actually falls. Rock Hill
+ * is her densest market (seven of the eleven case studies, "21 closed
+ * transactions and counting" in her own neighborhood guide), Fort Mill is
+ * the office and the Google Business Profile pin, Charlotte is the
+ * market she names first, York is her second busiest town. Then the rest
+ * of York County, Indian Land, and the North Carolina towns south and
+ * east of Charlotte. Each has a page at /areas/<slug>/. Gastonia and
+ * Mooresville have stories but no page yet.
  */
 export const areas: Area[] = [
-  { slug: 'charlotte', name: 'Charlotte', county: 'Mecklenburg County', state: 'NC', stateName: 'North Carolina', zip: ['28273', '28214', '28216', '28262'], fromOffice: '19 miles, about 28 minutes to Uptown' },
   { slug: 'rock-hill', name: 'Rock Hill', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29730', '29732'], fromOffice: '12 miles, about 19 minutes' },
   { slug: 'fort-mill', name: 'Fort Mill', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29708', '29715'], fromOffice: 'Home base' },
+  { slug: 'charlotte', name: 'Charlotte', county: 'Mecklenburg County', state: 'NC', stateName: 'North Carolina', zip: ['28273', '28214', '28216', '28262'], fromOffice: '19 miles, about 28 minutes to Uptown' },
+  { slug: 'york', name: 'York', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29745'], fromOffice: '21 miles, about 36 minutes' },
   { slug: 'tega-cay', name: 'Tega Cay', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29708'], fromOffice: '5 miles, about 12 minutes' },
   { slug: 'lake-wylie', name: 'Lake Wylie', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29710'], fromOffice: '7 miles, about 21 minutes' },
-  { slug: 'york', name: 'York', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29745'], fromOffice: '21 miles, about 36 minutes' },
   { slug: 'clover', name: 'Clover', county: 'York County', state: 'SC', stateName: 'South Carolina', zip: ['29710'], fromOffice: '19 miles, about 45 minutes' },
   { slug: 'indian-land', name: 'Indian Land', county: 'Lancaster County', state: 'SC', stateName: 'South Carolina', zip: ['29707', '29720'], fromOffice: '9 miles, about 21 minutes' },
   { slug: 'waxhaw', name: 'Waxhaw', county: 'Union County', state: 'NC', stateName: 'North Carolina', zip: ['28173'], fromOffice: '19 miles, about 40 minutes' },
@@ -180,8 +184,8 @@ export const areas: Area[] = [
 
 export const areaNames = areas.map((a) => a.name)
 export const areaSentence =
-  'Charlotte, Rock Hill, Fort Mill, Tega Cay, Lake Wylie, York, Clover, Indian Land, Waxhaw, Matthews, Pineville and Monroe'
-export const areaShort = 'Charlotte and the Carolina towns around it'
+  'Rock Hill, Fort Mill, Charlotte, York, Tega Cay, Lake Wylie, Clover, Indian Land, Waxhaw, Matthews, Pineville and Monroe'
+export const areaShort = 'Rock Hill, Fort Mill, Charlotte and the Carolina towns around them'
 
 export const nav = {
   header: [
@@ -221,7 +225,7 @@ export const legal = {
   realtorMark:
     'REALTOR® is a registered collective membership mark that identifies real estate professionals who are members of the National Association of REALTORS® and subscribe to its Code of Ethics.',
   serviceAreaSentence:
-    'Serving Charlotte, North Carolina and the South Carolina towns around it, including Rock Hill, Fort Mill, Tega Cay, Lake Wylie, York, Clover and Indian Land, and Waxhaw, Matthews, Pineville and Monroe in North Carolina.',
+    'Serving Rock Hill, Fort Mill, York, Tega Cay, Lake Wylie, Clover and Indian Land in South Carolina, and Charlotte, Waxhaw, Matthews, Pineville and Monroe in North Carolina.',
   /**
    * The two consumer disclosures each state requires at first
    * substantial contact. Linked from the footer so a visitor can read

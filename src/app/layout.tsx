@@ -34,7 +34,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${business.name}. Candace L. Thompson, MBA. Charlotte, Fort Mill, Rock Hill and the Carolina towns around them.`,
+    default: `${business.name}. Candace L. Thompson, MBA. Rock Hill, Fort Mill, Charlotte and the Carolina towns around them.`,
     template: `%s · ${business.name}`,
   },
   description: business.description,
