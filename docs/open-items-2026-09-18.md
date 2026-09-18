@@ -113,6 +113,15 @@ Written after the first build on 2026-09-18. What the site currently says, where
 17. **The listing video.** `1215 Autumn Cove, Cinematic.mp4` (214 MB, a Monroe listing) sits in the Drive root. It could become a hero video the way Deborah's site has one, cut to forty seconds with the address card removed. Not used yet.
 18. **Additional headshots.** Three files on her desktop failed to transfer per the brand assets log. "My picture.jpg" (3000 by 4200) did land in Drive and was not inspected for this build.
 
+## From the 2026-09-18 review call, built
+
+- Hero fits one laptop screen; portrait beside the call to action with her name under it; her real mark in the header.
+- Contact is a blurred pop-up from every Contact control, and /contact/ stays as the indexable page with the same form.
+- The form: first and last name, email, phone; buying, selling or both; sellers get address, bedrooms, bathrooms and an improvements note framed as their market snapshot; buyers get financing, location and price band; a timeline; one optional open box. No calendar.
+- Real Estate IQ Quiz at /quiz/, six scenarios per path from her case studies, result tier, contact capture at the end into the same webhook. Linked from the homepage and the footer.
+- **Two calls to action, as built:** primary "Talk with Candace" opens the form (information capture); secondary "Or call or text (704) 778-0779" as a plain link beside it. Alternatives worth Brett's eye: "Get my market snapshot" for sellers and "Tell me what you're looking for" for buyers as page-specific primaries.
+- **Still to decide:** whether the quiz belongs in the header nav (currently the homepage section and the footer link it), and the wording of the primary button.
+
 ## Decisions to raise
 
 - **The pink.** The logo crescent is #ff04f8; white on it is 3.17:1. Per Brett's instruction the hue was held and the lightness lowered to #d103cc, 4.57:1 with white (hover #ad02a9, 6.20:1). It is visibly slightly less electric than the logo. Brett can push back if he wants the raw value somewhere other than the logo artwork.

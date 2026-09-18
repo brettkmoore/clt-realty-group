@@ -150,6 +150,25 @@ export default async function Home() {
         </Container>
       </section>
 
+      {/* The quiz, as a plain invitation on the plate width. */}
+      <section aria-labelledby="quiz-heading" className="border-t border-rule bg-field py-24 sm:py-32">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-base/7 font-semibold text-blue">Real Estate IQ Quiz</p>
+            <h2 id="quiz-heading" className="mt-2 font-display text-[2.25rem]/[1.1] text-ink sm:text-5xl/[1.05]">
+              Six moments from my own closings. What would you do?
+            </h2>
+            <p className="mt-6 text-lg/8 text-ink-soft">
+              The expired listing, the low appraisal, the house you cannot get into, the state line. Pick what you
+              would do and I will tell you what worked. About four minutes.
+            </p>
+            <p className="mt-8">
+              <Button href="/quiz/">Take the quiz</Button>
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <GoogleProfile />
 
       <section id="questions" className="border-t border-rule bg-field">

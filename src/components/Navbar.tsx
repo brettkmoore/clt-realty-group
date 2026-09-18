@@ -53,7 +53,7 @@ export function Navbar() {
             <Logo tone={overHero ? 'dark' : 'ink'} />
           </Link>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex lg:gap-x-8 xl:gap-x-12">
           {nav.header.map((item) => (
             <Link key={item.href} href={item.href} className={`${linkClass} ${tone}`} aria-current={current(item.href)}>
               {item.title}

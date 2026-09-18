@@ -75,6 +75,7 @@ const columns = [
       { title: 'Areas served', href: '/areas/' },
       { title: 'About Candace', href: '/about/' },
       { title: 'Questions people ask', href: '/#questions' },
+      { title: 'Real Estate IQ Quiz', href: '/quiz/' },
     ],
   },
   {

@@ -32,7 +32,8 @@ export default function ContactPage() {
             <h1 className="mt-2 font-display text-[2.5rem]/[1.05] text-pretty text-ink sm:text-5xl/[1.05]">Call, text, or send a note.</h1>
             <p className="mt-6 text-lg/8 text-ink-soft">
               The fastest way to reach me is my cell, and I answer it, because a call can be a client who needs me
-              right now. After hours, send a note here or by email and I will answer first thing.
+              right now. Or send me a few details below and I will reach out. There is no booking calendar on
+              purpose: I would rather call you at a time I know I am free.
             </p>
           </div>
           <div className="mt-14">
@@ -71,7 +72,8 @@ export default function ContactPage() {
             />
           </div>
           <div className="mt-16 max-w-xl border-t border-rule pt-12">
-            <h2 className="font-display text-2xl text-ink">Send a note</h2>
+            <h2 className="font-display text-2xl text-ink">Tell me what you are trying to do</h2>
+            <p className="mt-2 text-base/7 text-ink-soft">A few taps, no calendar. I reach out myself.</p>
             <div className="mt-6">
               <ContactForm />
             </div>

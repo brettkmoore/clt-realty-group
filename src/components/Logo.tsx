@@ -29,7 +29,7 @@ export function Logo({ className, tone = 'ink' }: { className?: string; tone?: '
         <span className={clsx('font-display text-[20px] leading-none tracking-[-0.01em] sm:text-[22px]', tone === 'dark' ? 'text-cream' : 'text-ink')}>
           CLT Realty Group
         </span>
-        <span className={clsx('mt-1 hidden text-[9px] font-semibold uppercase leading-none tracking-[0.2em] sm:inline', tone === 'dark' ? 'text-cream/70' : 'text-blue')}>
+        <span className={clsx('mt-1 hidden text-[9px] font-semibold uppercase leading-none tracking-[0.2em] xl:inline', tone === 'dark' ? 'text-cream/70' : 'text-blue')}>
           Candace L. Thompson, MBA
         </span>
       </span>

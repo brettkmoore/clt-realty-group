@@ -29,6 +29,8 @@ pnpm build          # production build
 | The twelve area pages' copy | `src/content/areas.ts` |
 | The FAQ blocks on the home, buyers and sellers pages | `src/content/faq.ts` |
 | The three quoted Google reviews | `src/content/reviews.ts` |
+| The IQ quiz questions, explanations and result tiers | `src/content/quiz.ts` |
+| The contact pop-up and the form it shares with /contact/ | `src/components/ContactModal.tsx`, `src/components/ContactForm.tsx` |
 | JSON-LD builders (RealEstateAgent + LocalBusiness, Person, ImageObject, Organization, WebSite, BlogPosting, BreadcrumbList, FAQPage) | `src/lib/schema.ts` |
 | Design tokens and the few CSS rules utilities cannot carry | `src/styles/tailwind.css` |
 | Her logo and the Keller Williams mark | `public/brand/` |
@@ -64,7 +66,7 @@ What was stripped from every block, on purpose: rounded corners on photos and pa
 
 ## Routes
 
-`/` home, `/buyers/`, `/sellers/`, `/about/`, `/stories/` and `/stories/<slug>/`, `/areas/` and `/areas/<slug>/`, `/contact/`, `/sitemap.xml`, `/robots.txt`. `/blog/`, `/case-studies/` and `/neighborhoods/` redirect to `/stories/` and `/areas/`.
+`/` home, `/buyers/`, `/sellers/`, `/about/`, `/stories/` and `/stories/<slug>/`, `/areas/` and `/areas/<slug>/`, `/contact/`, `/quiz/`, `/sitemap.xml`, `/robots.txt`. `/blog/`, `/case-studies/` and `/neighborhoods/` redirect to `/stories/` and `/areas/`.
 
 ## Search visibility
 
@@ -72,7 +74,7 @@ What was stripped from every block, on purpose: rounded corners on photos and pa
 
 ## The contact form
 
-`/api/contact` forwards submissions as JSON to `CONTACT_WEBHOOK_URL` (a GoHighLevel inbound webhook; her sub-account was staged on 2026-09-09). Until that environment variable is set on Vercel, the form tells the visitor it is not connected and shows the phone number and email instead.
+`/api/contact/` forwards submissions from the form and the quiz as JSON, every field included, to `CONTACT_WEBHOOK_URL` (a GoHighLevel inbound webhook; her sub-account was staged on 2026-09-09). Until that environment variable is set on Vercel, the form tells the visitor it is not connected and shows the phone number and email instead.
 
 ## Adding a story
 
