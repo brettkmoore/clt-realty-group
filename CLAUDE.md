@@ -57,6 +57,12 @@ Brett, 2026-09-18: "All of these improvements that we're making for the Deborah 
 - **Contractions in her voice.** "I'm," never "I am." Keller Williams Connected stays in the footer and schema, out of the hero.
 - **Reviews are an asset here.** 5.0 on Google and Zillow; a testimonials section is correct on this site. Quotes verbatim, attributed as signed, confirmed by Candace.
 
+## Forms: four doors, one handler, one switch
+
+Brett, 2026-09-18: the IQ quiz, the buyer questionnaire, the seller questionnaire and the contact form are all inline and native, in her type and color. No JotForm, no embeds, no new tabs. All four post to `/api/contact/`, which calls `deliverLead()` in `src/lib/leads.ts`. **The destination is one environment variable, `LEAD_DESTINATION`**: `ghl-webhook`, `ghl-api`, `email` or `log`. Change it there and all four forms follow. The `log` default answers "not connected" so the visitor is shown the phone number; a form never pretends a lead was delivered. Do not add a fifth form that posts anywhere else, and do not add a scheduler.
+
+The questionnaires are configs in `src/content/questionnaires.ts` rendered by `Questionnaire.tsx`. Nothing in them asks about school districts, children, or who is in the household. Keep it that way.
+
 ## The pink, exactly
 
 The crescent in her logo samples at #ff04f8. White type on it measures 3.17:1. Brett, 2026-09-18: "just do a slight adjustment on her pink color to the point where we can get it a 4.5 to one ratio." The hue is held and the lightness lowered until white clears with a small margin: **#d103cc, 4.57:1 with white**; hover **#ad02a9, 6.20:1**. There is one pink on the site. Do not reintroduce the raw logo value outside the logo artwork, and do not "refine" the pink toward a different hue.

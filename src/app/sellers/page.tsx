@@ -12,6 +12,8 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import { breadcrumb, faqNode } from '@/lib/schema'
 import { sellersFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
+import { QuestionnaireFor } from '@/components/QuestionnaireFor'
+import { sellersQuestionnaire } from '@/content/questionnaires'
 
 export const metadata: Metadata = {
   title: 'Selling a home in Rock Hill, Fort Mill, Charlotte or the towns around them',
@@ -88,12 +90,26 @@ export default async function SellersPage() {
       <InteriorHero eyebrow="Sellers" title="Selling a home in Rock Hill, Fort Mill, Charlotte or the towns around them.">
         <p>
           Most of the sellers on this site had something working against them: a listing that had already failed,
-          a house buyers could not see past, a tenant, a distance, a loss. The plan is what carried each one, and I
-          will tell you the plan before you sign anything.
+          a house buyers could not see past, a tenant, a distance, a loss. Nineteen years and 304 closings taught
+          me to price a home the way an analyst reads a market, and I will tell you the plan before you sign
+          anything.
         </p>
       </InteriorHero>
 
       <Timeline items={STEPS} />
+
+      <section id="questionnaire" aria-labelledby="seller-heading" className="scroll-mt-24 border-t border-rule bg-field py-24 sm:py-32">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-base/7 font-semibold text-blue">{sellersQuestionnaire.eyebrow}</p>
+            <h2 id="seller-heading" className="mt-2 font-display text-[2.25rem]/[1.1] text-pretty text-ink sm:text-5xl/[1.05]">{sellersQuestionnaire.title}</h2>
+            <p className="mt-6 text-lg/8 text-ink-soft">{sellersQuestionnaire.intro}</p>
+          </div>
+          <div className="mt-14 max-w-3xl">
+            <QuestionnaireFor which="sellers" />
+          </div>
+        </Container>
+      </section>
 
       <FeatureSplit
         eyebrow="Situations I have sold through"
@@ -127,7 +143,7 @@ export default async function SellersPage() {
         </Container>
       </section>
 
-      <ClosingAsk heading="Find out what your home would bring this month.">
+      <ClosingAsk heading="Find out what your home would bring this month." secondaryHref="/sellers/#questionnaire" secondaryLabel="Or start your market snapshot">
         An honest read on price, preparation and timing, from the closed sales in your immediate area.
       </ClosingAsk>
     </>

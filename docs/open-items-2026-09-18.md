@@ -131,6 +131,16 @@ Written after the first build on 2026-09-18. What the site currently says, where
 - **Headshot.** Two professional portraits exist in the Drive: the pink blazer studio portrait (1200 by 1600, previously on the site) and the pink cardigan outdoor portrait (3000 by 4200, "My picture.jpg", now on the site). Brett said the blazer was not the one they want; the cardigan is the only other. Both are in `public/about/`; one line in `src/lib/site.ts` swaps them. The tracker lists Facebook albums "Profile pictures" and "Business Pic" that were never ingested; if the one they want is there, it needs to be uploaded to the Drive.
 - **Zillow reviews.** The rating and count are on the site. The nineteen review texts could not be read from Zillow in this session (the reviews tab loads nothing readable to automation); the three quotes on the homepage remain from Google. Candace confirms which quotes she wants used, from either profile.
 
+## Where the leads go. Decide this before anyone shares the link widely.
+
+Four native forms now exist (pop-up and contact page, buyer questionnaire on /buyers/, seller questionnaire on /sellers/, the IQ quiz). All of them post to one handler with the destination behind one Vercel environment variable, `LEAD_DESTINATION`. **As shipped, nothing is configured**, so every form tells the visitor plainly that it is not connected and gives the phone number and email. No lead is silently dropped, and none is delivered either.
+
+What each option takes:
+
+1. **GoHighLevel inbound webhook (recommended, zero code).** In her sub-account: Automations, create a workflow, trigger "Inbound Webhook", copy the URL. On Vercel set `CONTACT_WEBHOOK_URL` to it (and optionally `LEAD_DESTINATION=ghl-webhook`). The workflow maps the fields to a contact and can text her. Ten minutes for Brett.
+2. **GoHighLevel API.** A Private Integration token for her sub-account with contacts write scope, plus its location ID, as `GHL_TOKEN` and `GHL_LOCATION_ID`, with `LEAD_DESTINATION=ghl-api`. The handler upserts the contact and adds every answer as a note. The agency token in `~/.secrets/bnb.env` was tried on 2026-09-18 and is rejected as invalid, so this needs a fresh token.
+3. **Email fallback.** A Resend API key with a verified sending domain, `LEAD_TO=candacethompsonrealtor@gmail.com`, `LEAD_DESTINATION=email`. Nothing on hand today supports sending email without a key.
+
 ## Decisions to raise
 
 - **The pink.** The logo crescent is #ff04f8; white on it is 3.17:1. Per Brett's instruction the hue was held and the lightness lowered to #d103cc, 4.57:1 with white (hover #ad02a9, 6.20:1). It is visibly slightly less electric than the logo. Brett can push back if he wants the raw value somewhere other than the logo artwork.

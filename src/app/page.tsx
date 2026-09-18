@@ -25,6 +25,7 @@ export const metadata: Metadata = {
  */
 const FIGURES = [
   { label: 'homes sold, career', value: String(production.totalSales) },
+  ...(production.careerVolume ? [{ label: 'career sales volume, per Candace', value: production.careerVolume }] : []),
   { label: 'homes sold in the last twelve months', value: String(production.salesLast12Months) },
   { label: 'years in real estate', value: String(production.yearsExperience) },
   { label: `on Zillow from ${production.zillowRating.count} reviews, and on Google from ${gbp.rating.count}`, value: production.zillowRating.value },

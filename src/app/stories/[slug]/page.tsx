@@ -156,7 +156,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           <footer className="mx-auto mt-14 max-w-[40rem] border-t border-rule pt-8">
             <p className="font-display text-xl text-ink">{agent.name}</p>
             <p className="mt-1 text-sm/6 text-ink-soft">
-              {business.name}. Serving {areaShort}.{' '}
+              {business.name}. Nineteen years, 304 closings, serving {areaShort}.{' '}
               <a href={`tel:${business.phoneE164}`} className="tap text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink figure">
                 {business.phone}
               </a>

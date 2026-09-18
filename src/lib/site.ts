@@ -100,6 +100,13 @@ export const production = {
   averagePrice: '$355,000',
   zillowRating: { value: '5.0', count: 19, readOn: '2026-09-18' },
   specialties: ["Buyer's agent", 'Listing agent', 'Relocation', 'Foreclosure', 'New construction'],
+  /**
+   * CAREER SALES VOLUME. Null until Candace supplies the figure by email
+   * (Brett, 2026-09-18). Set it as a display string, for example
+   * '$95 million', with the date and source in this comment, and the
+   * record section shows it. Never compute or estimate it.
+   */
+  careerVolume: null as string | null,
 } as const
 
 export const agent = {

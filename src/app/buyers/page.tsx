@@ -12,6 +12,8 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import { breadcrumb, faqNode } from '@/lib/schema'
 import { buyersFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
+import { QuestionnaireFor } from '@/components/QuestionnaireFor'
+import { buyersQuestionnaire } from '@/content/questionnaires'
 
 export const metadata: Metadata = {
   title: 'Buying a home in Rock Hill, Fort Mill, Charlotte or the towns around them',
@@ -87,16 +89,30 @@ export default async function BuyersPage() {
       <SchemaGraph nodes={[faqNode(buyersFaq), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Buyers', path: '/buyers/' }])]} />
       <InteriorHero eyebrow="Buyers" title="Buying a home in Rock Hill, Fort Mill, Charlotte or the towns around them.">
         <p>
-          The house is the part you will fall in love with. The payment, the state line and the inspection are the
-          parts that decide whether you still love it in ten years, and those are the parts I will not let you rush.
+          Nineteen years and 304 closings on both sides of the state line. The house is the part you will fall in
+          love with. The payment, the state line and the inspection decide whether you still love it in ten years,
+          and those are the parts I read like an analyst and will not let you rush.
         </p>
       </InteriorHero>
 
       <Timeline items={STEPS} />
 
+      <section id="questionnaire" aria-labelledby="buyer-heading" className="scroll-mt-24 border-t border-rule bg-field py-24 sm:py-32">
+        <Container>
+          <div className="max-w-2xl">
+            <p className="text-base/7 font-semibold text-blue">{buyersQuestionnaire.eyebrow}</p>
+            <h2 id="buyer-heading" className="mt-2 font-display text-[2.25rem]/[1.1] text-pretty text-ink sm:text-5xl/[1.05]">{buyersQuestionnaire.title}</h2>
+            <p className="mt-6 text-lg/8 text-ink-soft">{buyersQuestionnaire.intro}</p>
+          </div>
+          <div className="mt-14 max-w-3xl">
+            <QuestionnaireFor which="buyers" />
+          </div>
+        </Container>
+      </section>
+
       <FeatureSplit
         eyebrow="Buyers I am built for"
-        heading="Four situations where the way I work does the work."
+        heading="Four situations where nineteen years of closings do the work."
         intro="Every one of these comes from a real transaction on this site or a real review on my Google profile."
         items={BUILT_FOR}
       />
@@ -126,7 +142,7 @@ export default async function BuyersPage() {
         </Container>
       </section>
 
-      <ClosingAsk heading="Tell me what you are looking for and when you need it.">
+      <ClosingAsk heading="Tell me what you are looking for and when you need it." secondaryHref="/buyers/#questionnaire" secondaryLabel="Or fill out the buyer questionnaire">
         The first call costs nothing. You will leave it knowing what is realistic and what I would do first.
       </ClosingAsk>
     </>

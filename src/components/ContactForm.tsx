@@ -22,7 +22,9 @@ import { business } from '@/lib/site'
  * fields. The seller path is framed as what they get, a market snapshot
  * of their home, not as data we want. Address is typed because it has
  * to be. One optional "anything else" box at the end, where the real
- * motivation usually shows up.
+ * motivation usually shows up. In the pop-up (`compact`) only the
+ * shared fields show, with a link to the long questionnaire for the
+ * chosen path; the /contact/ page shows the buyer and seller blocks.
  *
  * Posts to /api/contact, which forwards everything to the GoHighLevel
  * inbound webhook. Until that is connected the form says so and hands
@@ -195,7 +197,7 @@ export function ContactForm({ compact = false }: { compact?: boolean } = {}) {
         </div>
       </fieldset>
 
-      {selling ? (
+      {selling && !compact ? (
         <div className="space-y-6 border-l-2 border-blue pl-5">
           <div>
             <p className="font-display text-xl text-ink">Your market snapshot</p>
@@ -222,7 +224,7 @@ export function ContactForm({ compact = false }: { compact?: boolean } = {}) {
         </div>
       ) : null}
 
-      {buying ? (
+      {buying && !compact ? (
         <div className="space-y-6 border-l-2 border-blue pl-5">
           <div>
             <p className="font-display text-xl text-ink">What you are looking for</p>
@@ -240,6 +242,24 @@ export function ContactForm({ compact = false }: { compact?: boolean } = {}) {
       ) : null}
 
       {role ? <Chips name="timeline" legend="When" options={TIMELINES} value={timeline} onChange={setTimeline} /> : null}
+
+      {compact && role ? (
+        <p className="text-sm/6 text-ink-soft">
+          Want to go deeper? The{' '}
+          {buying ? (
+            <a href="/buyers/#questionnaire" className="tap text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink">
+              buyer questionnaire
+            </a>
+          ) : null}
+          {buying && selling ? ' and the ' : null}
+          {selling ? (
+            <a href="/sellers/#questionnaire" className="tap text-ink underline decoration-ink/25 underline-offset-4 hover:decoration-ink">
+              seller questionnaire
+            </a>
+          ) : null}{' '}
+          {buying && selling ? 'take' : 'takes'} four minutes and {buying && selling ? 'set' : 'sets'} up the first call properly.
+        </p>
+      ) : null}
 
       <div>
         <label htmlFor="cf-message" className={label}>
