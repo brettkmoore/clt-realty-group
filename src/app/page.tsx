@@ -56,8 +56,8 @@ export default async function Home() {
               {production.yearsExperience} years. {production.totalSales} homes sold. Two states.
             </h2>
             <p className="mt-6 text-lg/8 text-ink-soft">
-              Every number here is on my public record. I sell from $60,000 starter condos to $625,000 relocations,
-              on both sides of the state line, and most of the people I work with came from someone I already helped.
+              Every number here is on my public record. My closings run from $60,000 to $625,000, on both sides of the
+              state line, and many of the people I work with came from someone I already helped.
             </p>
           </div>
           <div className="mt-16">
