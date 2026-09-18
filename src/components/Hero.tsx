@@ -55,6 +55,7 @@ export function Hero() {
             width={agent.headshotWidth}
             height={agent.headshotHeight}
             sizes="96px"
+            priority
             className="size-24 rounded-full object-cover object-top ring-2 ring-cream/80"
           />
           <p className="mt-6 text-[13px] font-semibold tracking-[0.1em] uppercase text-cream/85">
