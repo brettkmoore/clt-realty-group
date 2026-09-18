@@ -24,6 +24,27 @@ The code says how the site works. This file carries the decisions the code canno
 
 **Keller Williams, not eXp.** Nothing from the Deborah Rose build's Texas or eXp compliance applies here. The Keller Williams Identity and Style Guide (section 3.1) requires the market center DBA logo and the ownership statement on every website. The footer carries both. Two states license her; the footer names both commissions and both numbers.
 
+## Layout rules learned on the Deborah Rose build, applied here from the start
+
+Brett, 2026-09-18: "All of these improvements that we're making for the Deborah Rose Real Estate website, make sure to pass that information along to the Candace Thompson build, because I don't want to see that one make the same mistakes." In order of how much it mattered.
+
+1. **Section headers stack on top. Never beside.** Eyebrow, heading and intro paragraph go on top, left aligned, on the narrow measure. The content, table, list or cards go below, spanning full width. Brett rejected the header-in-one-column, content-in-the-other split twice before it became a rule. `FeatureSplit`, `GoogleProfile`, the About credentials, the area page and the contact page were all restructured to this before the first review.
+2. **Video heroes are full bleed with a directional dark overlay and white type.** Cinematic and luxury. The scrim is a directional gradient (`.hero-scrim-y` and `.hero-scrim-x`), densest where the type sits, open elsewhere; never a flat black at fifty percent, which is exactly what reads as a template. The footage is graded (slight desaturation, a small lift in the blacks) and the poster is a frame of the graded output under the same overlay, so nothing flashes when the video takes over. Slow footage only. Never the video in a side column beside text. Contrast is measured against the brightest frame of the loop, not the first: white needs 4.5:1 on the paragraph and 3:1 on the headline, and if it fails the overlay deepens; the video never shrinks and the treatment is never abandoned.
+3. **The homepage hero fills the screen; interior heroes share one aspect ratio.** Home is `100dvh` with a `100vh` fallback, the header transparent over the footage until the page scrolls. Buyers, sellers, stories and areas use `InteriorHero`: CSS `aspect-ratio` 16 by 9 from the tablet breakpoint up and 4 by 5 below it, so all four are identical at any width with no per-page value to drift. If a headline overflows, shorten the headline; do not grow the band. About has the same header structure with no video.
+4. **Never upscale an image. Read the natural dimensions first.** Her headshot is 1200 by 1600 and is never rendered wider than that; story photos are 1600 wide and never rendered wider. Check the file before sizing any panel.
+5. **No giant photo panels of the agent.** A small circular portrait, 96 to 128 pixels, beside or above the H1. It reads as intentional and stays sharp.
+6. **Primary buttons use the brand accent, never black.** Here the pink from her logo, adjusted once for contrast (below). Verify 4.5:1 with white and keep the focus ring visible.
+7. **Tables and lists: full width, asymmetric columns, hairlines.** `FactList` is two fifths label to three fifths value with hairline rules between rows. Never a fifty-fifty split and never boxes or cards.
+8. **A rule that was withdrawn; do not reapply it.** The Deborah build was once told never to float text over moving footage. Brett overruled it: the technique is fine, bad execution (dark text on untreated bright footage) was the problem. A dark directional overlay with white type is a legitimate luxury treatment.
+
+## The pink, exactly
+
+The crescent in her logo samples at #ff04f8. White type on it measures 3.17:1. Brett, 2026-09-18: "just do a slight adjustment on her pink color to the point where we can get it a 4.5 to one ratio." The hue is held and the lightness lowered until white clears with a small margin: **#d103cc, 4.57:1 with white**; hover **#ad02a9, 6.20:1**. There is one pink on the site. Do not reintroduce the raw logo value outside the logo artwork, and do not "refine" the pink toward a different hue.
+
+## Her media
+
+Every photograph and every frame of video on this site is hers, from the CLT Realty Group Digital Assets Drive. Nothing is borrowed from another client's site and nothing is stock. The hero loop is cut from her own listing film "1215 Autumn Cove, Cinematic.mp4" using only the caption-free, slow shots. If a future asset gap appears, the page says less; it never borrows.
+
 ## Where her voice comes from
 
 Every sentence in her first person is derived from her eleven case studies in the CLT Realty Group Digital Assets Drive (`05_Content/Case_Studies`) and from what she said in the seven meeting transcripts of August and September 2026. Read three case studies before writing anything in her voice. The rhythm: state the assumption most people make, say what she did instead and why, give the number, close on what the client needed rather than on the deal. Plainspoken. "That is the job." "I would never steer someone away from." "Here is the thing." She talks about the payment letting you sleep, about not rushing anyone, and about doing whatever the house needs, including sweeping it out herself.

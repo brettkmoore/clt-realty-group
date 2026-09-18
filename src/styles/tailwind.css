@@ -13,17 +13,25 @@
  *
  * WHAT IS SPECIFIC TO THIS SITE. The palette is the one agreed with
  * Candace on 2026-08-28: sixty percent white, thirty percent blue, ten
- * percent pink. The blue and the pink are sampled from her own logo
- * (02_Brand_Assets/Logos/clt-realty-logo-primary.png): the logo blue is
- * #0013f5 and the crescent is #ff04f8. The blue carries eyebrows, labels,
- * the header underline and one deep band per page. The pink is the one
- * action color: it fills the primary button and nothing else. The logo's
- * neon pink fails contrast under white type, so the button pink is the
- * same hue brought down to #c400bd (5.2:1 with white); the true logo
- * pink survives at small sizes, on selection and on the crescent icon.
+ * percent pink. All three colors are sampled from her own logo
+ * (02_Brand_Assets/Logos/clt-realty-logo-primary.png, read pixel by pixel
+ * on 2026-09-18): the palmetto and wordmark blue is #0013f5, the
+ * crescent moon is #ff04f8, the skyline slate is #5b7078. The blue is the
+ * primary: nav, links, eyebrows, labels and the one deep band per page.
+ * The pink is the one action color, the call to action, and the accent.
+ *
+ * THE PINK, ADJUSTED. White type on the raw crescent pink measures 3.17:1,
+ * under the 4.5:1 a button needs. Brett, 2026-09-18: "just do a slight
+ * adjustment on her pink color to the point where we can get it a 4.5
+ * to one ratio." So the hue is held (R and B scaled together in linear
+ * light, G left at its near zero) and the lightness lowered until white
+ * clears with a small margin: #d103cc, 4.57:1 with white. Hover is one
+ * step darker at #ad02a9, 6.20:1. There is one pink on the site; the raw
+ * logo value appears only inside the logo artwork itself.
  *
  * Photographs of homes carry the rest of the color. The chrome around
- * them stays white, blue and greyscale so the homes read as the subject.
+ * them stays white, blue, slate and greyscale so the homes read as the
+ * subject.
  */
 
 @theme {
@@ -40,16 +48,27 @@
   --color-night: #0a0f5c;
   --color-cream: #ffffff;
 
-  /* The logo blue for labels, and a deep blue for the one band per page. */
+  /* The logo blue, 8.71:1 on white, and a deep blue for the one band per page. */
   --color-blue: #0013f5;
   --color-blue-deep: #0a0f5c;
   --color-blue-soft: #e9ebfe;
 
-  /* The action pink. Fills the primary button only. */
-  --color-pink: #c400bd;
-  --color-pink-hover: #9d0097;
-  --color-pink-bright: #ff04f8;
+  /* The skyline slate from the logo, 5.21:1 on white. */
+  --color-slate: #5b7078;
+
+  /* The one pink. The crescent, lowered just enough for white type: 4.57:1. */
+  --color-pink: #d103cc;
+  --color-pink-hover: #ad02a9;
   --color-pink-soft: #fce8fb;
+
+  /*
+   * THE HERO HEIGHTS. The homepage hero fills the viewport, dynamic
+   * viewport units first with a plain viewport fallback for browsers
+   * without them. Interior video heroes are 16 by 9 from the tablet
+   * breakpoint up and 4 by 5 below it (Brett, 2026-09-18), so all four
+   * are the same height at any width without a per-page value.
+   */
+  --hero-fallback: 100vh;
 }
 
 @layer base {
@@ -321,6 +340,42 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* The homepage hero: the full screen, address bar included, on every device. */
+.hero-full {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* The interior hero: one aspect ratio shared by every page that has one. */
+.hero-interior {
+  aspect-ratio: 4 / 5;
+}
+@media (min-width: 768px) {
+  .hero-interior {
+    aspect-ratio: 16 / 9;
+    max-height: 44rem;
+  }
+}
+
+/*
+ * THE SCRIM. Directional, never a flat wash: densest at the foot and the
+ * left, where the type sits, open at the top right so the footage still
+ * reads as footage. Tuned against the brightest frame of the graded loop
+ * (see docs/open-items for the measurement).
+ */
+.hero-scrim-y {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.62) 38%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.12) 100%);
+}
+.hero-scrim-x {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.18) 55%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* The header over the homepage video: transparent until the page scrolls. */
+.nav-over-hero {
+  background-color: transparent;
+  border-color: transparent;
 }
 /*
  * The still sits under the video at all times. If a device blocks

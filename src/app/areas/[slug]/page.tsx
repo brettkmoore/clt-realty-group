@@ -7,6 +7,7 @@ import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { Heading, Eyebrow } from '@/components/Text'
 import { StoryCard } from '@/components/StoryCard'
 import { ClosingAsk } from '@/components/ClosingAsk'
+import { FactList } from '@/components/FactList'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { absolute, AGENT_ID, BROKERAGE_ID, breadcrumb, cityNode } from '@/lib/schema'
 import { areaContent } from '@/content/areas'
@@ -74,37 +75,30 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
           <Heading as="h1" className="mt-4 max-w-4xl">
             {c.title}
           </Heading>
-          <div className="mt-10 lg:grid lg:grid-cols-12 lg:gap-x-12">
-            <div className="max-w-2xl space-y-6 text-lg/8 text-ink-soft lg:col-span-7">
-              <p className="text-[22px]/[1.4] text-ink">{c.intro}</p>
-              {c.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
-            <aside className="mt-12 lg:col-span-4 lg:col-start-9 lg:mt-0">
-              <div className="panel p-8">
-                <h2 className="text-sm font-medium text-ink">Neighborhoods people ask about</h2>
-                <ul role="list" className="mt-4 space-y-2 text-base/7 text-ink-soft">
-                  {c.neighborhoods.map((n) => (
-                    <li key={n}>{n}</li>
-                  ))}
-                </ul>
-                <h2 className="mt-8 text-sm font-medium text-ink">Zip codes</h2>
-                <p className="mt-2 text-base/7 text-ink-soft figure">{area.zip.join(', ')}</p>
-                {area.fromOffice ? (
-                  <>
-                    <h2 className="mt-8 text-sm font-medium text-ink">From my Fort Mill office</h2>
-                    <p className="mt-2 text-base/7 text-ink-soft">{area.fromOffice}</p>
-                  </>
-                ) : null}
-                <h2 className="mt-8 text-sm font-medium text-ink">Call or text</h2>
-                <p className="mt-2">
-                  <a href={`tel:${business.phoneE164}`} className="tap text-base/7 text-ink figure hover:underline hover:underline-offset-4">
-                    {business.phone}
-                  </a>
-                </p>
-              </div>
-            </aside>
+          <div className="mt-8 max-w-3xl">
+            <p className="text-[22px]/[1.4] text-ink">{c.intro}</p>
+          </div>
+          <div className="mt-10 max-w-3xl space-y-6 text-lg/8 text-ink-soft">
+            {c.paragraphs.map((p) => (
+              <p key={p.slice(0, 40)}>{p}</p>
+            ))}
+          </div>
+          <div className="mt-14">
+            <FactList
+              items={[
+                { label: 'Neighborhoods people ask about', value: c.neighborhoods.join(', ') },
+                { label: 'Zip codes', value: <span className="figure">{area.zip.join(', ')}</span> },
+                ...(area.fromOffice ? [{ label: 'From my Fort Mill office', value: area.fromOffice }] : []),
+                {
+                  label: 'Call or text',
+                  value: (
+                    <a href={`tel:${business.phoneE164}`} className="tap text-ink figure hover:underline hover:underline-offset-4">
+                      {business.phone}
+                    </a>
+                  ),
+                },
+              ]}
+            />
           </div>
         </Container>
       </section>

@@ -6,6 +6,7 @@ import { Container } from '@/components/Container'
 import { Breadcrumbs } from '@/components/Breadcrumbs'
 import { StoryCard } from '@/components/StoryCard'
 import { ClosingAsk } from '@/components/ClosingAsk'
+import { FactList } from '@/components/FactList'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { Heading, Eyebrow } from '@/components/Text'
 import { absolute, AGENT_ID, PERSON_ID, breadcrumb, cityNode, imageNode, placeNode } from '@/lib/schema'
@@ -111,14 +112,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
           {story.facts.length ? (
             <div className="mx-auto mb-14 max-w-[40rem]">
               <h2 className="text-[13px] font-semibold tracking-[0.08em] uppercase text-blue">The numbers</h2>
-              <dl className="mt-4 divide-y divide-rule border-y border-rule text-base/7">
-                {story.facts.map((f) => (
-                  <div key={f.label} className="grid gap-x-6 py-3 sm:grid-cols-3">
-                    <dt className="text-ink-soft">{f.label}</dt>
-                    <dd className="text-ink figure sm:col-span-2">{f.value}</dd>
-                  </div>
-                ))}
-              </dl>
+              <FactList className="mt-4 figure" items={story.facts} />
             </div>
           ) : null}
           <div className="prose-story mx-auto max-w-[40rem]" dangerouslySetInnerHTML={{ __html: story.html }} />

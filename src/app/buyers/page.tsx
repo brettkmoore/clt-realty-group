@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { VideoCameraIcon, ScaleIcon, HomeModernIcon, MapIcon } from '@heroicons/react/20/solid'
 
 import { Container } from '@/components/Container'
-import { PageIntro } from '@/components/PageIntro'
+import { InteriorHero } from '@/components/InteriorHero'
 import { Timeline } from '@/components/Timeline'
 import { FeatureSplit } from '@/components/FeatureSplit'
 import { StoryCard } from '@/components/StoryCard'
@@ -85,12 +85,12 @@ export default async function BuyersPage() {
   return (
     <>
       <SchemaGraph nodes={[faqNode(buyersFaq), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Buyers', path: '/buyers/' }])]} />
-      <PageIntro eyebrow="Buyers" title="Buying a home in Charlotte or the Carolina towns around it.">
+      <InteriorHero eyebrow="Buyers" title="Buying a home in Charlotte or the Carolina towns around it.">
         <p>
           The house is the part you will fall in love with. The payment, the state line and the inspection are the
           parts that decide whether you still love it in ten years, and those are the parts I will not let you rush.
         </p>
-      </PageIntro>
+      </InteriorHero>
 
       <Timeline items={STEPS} />
 
@@ -99,11 +99,6 @@ export default async function BuyersPage() {
         heading="Four situations where the way I work does the work."
         intro="Every one of these comes from a real transaction on this site or a real review on my Google profile."
         items={BUILT_FOR}
-        image={{
-          src: '/stories/342-pickens-st-rock-hill-sc-29730-exterior-dusk.webp',
-          alt: 'Single story bungalow with a covered front porch photographed at dusk in downtown Rock Hill, South Carolina',
-        }}
-        imageSide="left"
       />
 
       {stories.length ? (

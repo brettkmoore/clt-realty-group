@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ArrowPathIcon, WrenchScrewdriverIcon, HeartIcon, GlobeAmericasIcon } from '@heroicons/react/20/solid'
 
 import { Container } from '@/components/Container'
-import { PageIntro } from '@/components/PageIntro'
+import { InteriorHero } from '@/components/InteriorHero'
 import { Timeline } from '@/components/Timeline'
 import { FeatureSplit } from '@/components/FeatureSplit'
 import { StoryCard } from '@/components/StoryCard'
@@ -85,13 +85,13 @@ export default async function SellersPage() {
   return (
     <>
       <SchemaGraph nodes={[faqNode(sellersFaq), breadcrumb([{ name: 'Home', path: '/' }, { name: 'Sellers', path: '/sellers/' }])]} />
-      <PageIntro eyebrow="Sellers" title="Selling a home in Charlotte or the Carolina towns around it.">
+      <InteriorHero eyebrow="Sellers" title="Selling a home in Charlotte or the Carolina towns around it.">
         <p>
           Most of the sellers on this site had something working against them: a listing that had already failed,
           a house buyers could not see past, a tenant, a distance, a loss. The plan is what carried each one, and I
           will tell you the plan before you sign anything.
         </p>
-      </PageIntro>
+      </InteriorHero>
 
       <Timeline items={STEPS} />
 
@@ -100,11 +100,6 @@ export default async function SellersPage() {
         heading="Four sales where the plan mattered more than the market."
         intro="Every one of these is a real transaction on this site."
         items={SOLD_THROUGH}
-        image={{
-          src: '/stories/334-pickens-st-rock-hill-sc-backyard-deck-pool.webp',
-          alt: 'Two tiered wood deck wrapping around a backyard pool behind a home in Rock Hill, South Carolina',
-        }}
-        imageSide="right"
       />
 
       {stories.length ? (

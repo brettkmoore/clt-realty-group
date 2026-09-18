@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
-import { PageIntro } from '@/components/PageIntro'
+import { InteriorHero } from '@/components/InteriorHero'
 import { ClosingAsk } from '@/components/ClosingAsk'
 import { SchemaGraph } from '@/components/SchemaGraph'
 import { breadcrumb } from '@/lib/schema'
@@ -22,14 +22,14 @@ export default async function AreasPage() {
   return (
     <>
       <SchemaGraph nodes={[breadcrumb([{ name: 'Home', path: '/' }, { name: 'Areas', path: '/areas/' }])]} />
-      <PageIntro eyebrow="Areas" title="Twelve towns, two states, one market.">
+      <InteriorHero eyebrow="Areas" title="Twelve towns, two states, one market.">
         <p>
           Charlotte, and the towns that flank it on both sides of the state line. I grew up in Rock Hill and live there
           now, my office is in Fort Mill, and I go wherever a client decides they want to be. Each page carries what I
           tell buyers about the place, the neighborhoods people ask about, and the stories from there.
         </p>
-      </PageIntro>
-      <section className="pb-20 lg:pb-28">
+      </InteriorHero>
+      <section className="py-20 lg:py-28">
         <Container>
           <ul role="list" className="divide-y divide-rule border-y border-rule">
             {areas.map((a) => {

@@ -1,5 +1,22 @@
 # Open items for the review pass with Candace
 
+## Media, first
+
+**Every photograph and every frame of video on the site is Candace's own.** Nothing was borrowed from the Deborah Rose build or from stock. What was found in her Drive on 2026-09-18 and used:
+
+- **Hero video.** `1215 Autumn Cove, Cinematic.mp4` (204 MB, 85 seconds, 1080p, a Monroe listing film with her on camera and burned-in captions through parts of it). Cut to the caption-free, slow shots only (exterior push, front close, living room, kitchen, back field, closing aerials), graded once, audio stripped, and delivered as 1080p and 720p H.264 (the VP9 WebM came out larger than the H.264 and was dropped), with a poster frame taken from the graded output. Final sizes are in the build report and in `public/hero/`. Nothing else in `04_Video` (both subfolders are empty).
+- **Headshot.** `candace-thompson-headshot-01.jpg`, 1200 by 1600, used at 96 and 128 pixels as a circle and in the schema. `My picture.jpg` (3000 by 4200) is also in the Headshots folder and was not used.
+- **Logo.** `clt-realty-logo-primary.png`, 1422 by 1023, in the footer at 240 pixels.
+- **Story photos.** Seven hero photos from her listing folders in `01_Listings`.
+
+**What she still owes:**
+
+- Photos for four stories with no listing folder: the Mooresville duplex, the Rock Hill new construction build, the Rock Hill single level townhome, the Waxhaw purchase.
+- Calmer footage if she wants a different hero. The Autumn Cove film is the only video in the Drive.
+- **The gold question.** The brand assets log says the logo PNG was rasterized from a vector named `all gold.eps` on her desktop. There is no gold anywhere in the rendered logo (it is blue, magenta and slate, sampled pixel by pixel). Either the source file is misnamed or a separate gold variant exists on her desktop that nobody has looked at. No `.eps`, `.ai`, `.svg` or anything named gold is in the Drive. Brett should know before the site locks to magenta and blue.
+- The `00_Master_Tracker` sheet (exported 2026-09-18) lists more listing folders with hero photos chosen (Autumn Cove Monroe, Gants Road York, Dauphine Drive Charlotte, Wharton Lane Columbia, Dillon Way Fort Mill, Water Oak Pineville, Island View Lancaster and others). None of those transactions has a case study yet, so none is on the site. The tracker also confirms 767 Gants Rd is York, not Clover, and that `03_Events_Marketing` and `06_Unsorted_NeedsReview` are empty.
+
+
 Written after the first build on 2026-09-18. What the site currently says, where it came from, and what needs an answer before launch. Numbered so a call can walk it top to bottom. Nothing here was invented; where a fact is unknown the site says less rather than guessing.
 
 ## Settled in this build
@@ -40,6 +57,11 @@ Written after the first build on 2026-09-18. What the site currently says, where
 18. **Additional headshots.** Three files on her desktop failed to transfer per the brand assets log. "My picture.jpg" (3000 by 4200) did land in Drive and was not inspected for this build.
 
 ## Decisions to raise
+
+- **The pink.** The logo crescent is #ff04f8; white on it is 3.17:1. Per Brett's instruction the hue was held and the lightness lowered to #d103cc, 4.57:1 with white (hover #ad02a9, 6.20:1). It is visibly slightly less electric than the logo. Brett can push back if he wants the raw value somewhere other than the logo artwork.
+- **The header over the homepage video** is transparent until the page scrolls, then white. A white bar above a full-screen hero would mean the video does not fill the screen. Brett can ask for it opaque.
+- **Interior heroes on phones.** 16 by 9 is 211 pixels tall at 375 wide and will not hold a headline and a paragraph, so below the tablet breakpoint the band is 4 by 5. From tablet up it is 16 by 9 on all four pages.
+- **About has no video.** Brett left it open. It has the standard header structure with a 128 pixel circle portrait beside the H1. Easy to add the video band if he wants it.
 
 19. **Em dashes.** Her case studies use them constantly. Brett's rule for every site is none, and this build follows it. The copy gate fails on any em dash.
 20. **The Google rating on the page.** 5.0 from 32 is set as type with the read date, and never as markup. Deborah's site shows no rating because hers was 3.0 from 2. If Candace would rather not show a number at all, remove the two sentences in `GoogleProfile.tsx`.
