@@ -70,13 +70,14 @@ Written after the first build on 2026-09-18. What the site currently says, where
 
 ## Technical, before launch
 
-23. **Repository.** Candace's own repo `candacelthompson/candace-thompson-realtor-website` exists (created 2026-08-26, one commit, a README only) and Brett has push access to it. Per the brief this build lives in `brettkmoore/clt-realty-group` (private). Her repo's Vercel project is set to auto-deploy `main`, so nothing was pushed there. At launch: push this code to her repo, or transfer this one to her account and re-point Vercel.
-24. **Domain.** cltrealtygroup.net is hers at GoDaddy and currently redirects to candacelthompson.kw.com. Note that cltrealtygroup.com belongs to an unrelated Texas agent; do not use it.
-25. **Search visibility.** `HIDE_FROM_SEARCH_ENGINES` is `true`. Flip it at launch. Every non-canonical host is also noindexed at the header.
-26. **Contact form.** `CONTACT_WEBHOOK_URL` on Vercel, pointed at her GoHighLevel sub-account's inbound webhook (staged 2026-09-09). Until then the form tells the visitor it is not connected and shows the phone and email.
-27. **Google Business Profile website field** is empty. At launch it becomes cltrealtygroup.net.
-28. **State disclosure links.** The footer links the two commissions' home pages for the North Carolina Working With Real Estate Agents disclosure and the South Carolina Disclosure of Real Estate Brokerage Relationships. Her own PDFs of each, hosted on this domain, would be sturdier.
-29. **Keller Williams footer wording.** The ownership statement is the one on kwri.kw.com on 2026-09-18. The Identity and Style Guide was read from a 2018 mirror; KW Connected should confirm against the current guide on KWConnect.
+23. **Preview link.** Vercel project `clt-realty-group` on the Brett K Moore (Pro) team, linked to `brettkmoore/clt-realty-group`, every push to `main` redeploys. Stable URL: https://clt-realty-group-best-known-brand.vercel.app. The team's deployment protection (Vercel Authentication on every host except custom domains) is on, so the link opens for anyone signed in to the Vercel team and challenges everyone else; that is what keeps it private today. To show Candace before her domain is attached, either turn protection off for this project in Vercel settings or add her as a viewer. The noindex header is separate and stays on regardless.
+24. **Repository.** Candace's own repo `candacelthompson/candace-thompson-realtor-website` exists (created 2026-08-26, one commit, a README only) and Brett has push access to it. Per the brief this build lives in `brettkmoore/clt-realty-group` (private). Her repo's Vercel project is set to auto-deploy `main`, so nothing was pushed there. At launch: push this code to her repo, or transfer this one to her account and re-point Vercel.
+25. **Domain.** cltrealtygroup.net is hers at GoDaddy and currently redirects to candacelthompson.kw.com. Note that cltrealtygroup.com belongs to an unrelated Texas agent; do not use it.
+26. **Search visibility.** `HIDE_FROM_SEARCH_ENGINES` is `true`. Flip it at launch. Every non-canonical host is also noindexed at the header.
+27. **Contact form.** `CONTACT_WEBHOOK_URL` on Vercel, pointed at her GoHighLevel sub-account's inbound webhook (staged 2026-09-09). Until then the form tells the visitor it is not connected and shows the phone and email.
+28. **Google Business Profile website field** is empty. At launch it becomes cltrealtygroup.net.
+29. **State disclosure links.** The footer links the two commissions' home pages for the North Carolina Working With Real Estate Agents disclosure and the South Carolina Disclosure of Real Estate Brokerage Relationships. Her own PDFs of each, hosted on this domain, would be sturdier.
+30. **Keller Williams footer wording.** The ownership statement is the one on kwri.kw.com on 2026-09-18. The Identity and Style Guide was read from a 2018 mirror; KW Connected should confirm against the current guide on KWConnect.
 
 ## Process notes
 

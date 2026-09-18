@@ -70,4 +70,4 @@ Every sentence in her first person is derived from her eleven case studies in th
 - `CONTACT_WEBHOOK_URL` must be set on Vercel before the contact form delivers anything.
 - cltrealtygroup.net currently redirects to her Keller Williams page. It is registered at GoDaddy in her name and must be pointed at Vercel at launch.
 - Her Google Business Profile has no website set. At launch it becomes cltrealtygroup.net.
-- Deploy is push to `main`; Vercel builds. Nothing else.
+- Deploy is push to `main`; Vercel builds. Nothing else. Project `clt-realty-group` on the Brett K Moore Pro team (created 2026-09-18 through the dashboard import; the API token cannot create projects). Preview at https://clt-realty-group-best-known-brand.vercel.app, behind the team's Vercel Authentication until a custom domain is attached.
