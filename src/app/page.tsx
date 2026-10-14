@@ -13,7 +13,7 @@ import { SchemaGraph } from '@/components/SchemaGraph'
 import { faqNode } from '@/lib/schema'
 import { homeFaq } from '@/content/faq'
 import { getStories } from '@/lib/stories'
-import { agent, business, gbp, production, tagline } from '@/lib/site'
+import { agent, business, production, tagline } from '@/lib/site'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -24,11 +24,10 @@ export const metadata: Metadata = {
  * profile. Set as type. Update src/lib/site.ts and these follow.
  */
 const FIGURES = [
-  { label: 'homes sold, career', value: String(production.totalSales) },
-  ...(production.careerVolume ? [{ label: 'career sales volume, per Candace', value: production.careerVolume }] : []),
-  { label: 'homes sold in the last twelve months', value: String(production.salesLast12Months) },
-  { label: 'years in real estate', value: String(production.yearsExperience) },
-  { label: `on Zillow from ${production.zillowRating.count} reviews, and on Google from ${gbp.rating.count}`, value: production.zillowRating.value },
+  { value: String(production.totalSales), label: 'homes across my career' },
+  { value: String(production.salesLast12Months), label: 'homes in twelve months' },
+  { value: String(production.yearsExperience), label: 'years in real estate' },
+  { value: production.zillowRating.value, label: 'stars on Zillow and Google' },
 ]
 
 export default async function Home() {
@@ -52,13 +51,13 @@ export default async function Home() {
       <section aria-labelledby="record-heading" className="bg-field py-24 sm:py-32">
         <Container>
           <div className="max-w-2xl">
-            <p className="text-base/7 font-semibold text-blue">The record</p>
+            <p className="text-base/7 font-semibold text-blue">My experience</p>
             <h2 id="record-heading" className="mt-2 font-display text-[2.25rem]/[1.1] text-pretty text-ink sm:text-5xl/[1.05]">
-              {production.yearsExperience} years. {production.totalSales} homes sold. Two states.
+              {production.yearsExperience} years. {production.totalSales} homes sold. North and South Carolina.
             </h2>
             <p className="mt-6 text-lg/8 text-ink-soft">
-              Every number here is on my public record. My closings run from $60,000 to $625,000, on both sides of the
-              state line, and many of the people I work with came from someone I already helped.
+              I work the Charlotte market and the Columbia market. My MBA helps me look at buying and selling from a
+              legacy and wealth-building perspective for every client.
             </p>
           </div>
           <div className="mt-16">
@@ -90,14 +89,14 @@ export default async function Home() {
         <Container>
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 id="stories-heading" className="text-base/7 font-semibold text-blue">
-              Stories from the field
+              Success stories
             </h2>
             <p className="mt-2 font-display text-[2.25rem]/[1.1] text-balance text-ink sm:text-5xl/[1.05]">
-              Real deals in real neighborhoods.
+              Legacies are built one home at a time.
             </p>
             <p className="mt-6 text-lg/8 text-ink-soft">
-              Each one is a transaction I handled, told without the client&rsquo;s name or the street address, with
-              the numbers that mattered and the decision that made the difference.
+              These are buyers and sellers I worked with across the Charlotte and Columbia markets. Read the decision
+              that got the home bought or sold.
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -175,7 +174,7 @@ export default async function Home() {
         </Container>
       </section>
 
-      <ClosingAsk heading="Tell me what you are trying to do." secondaryHref="/about/" secondaryLabel="Read about me first">
+      <ClosingAsk heading="Helping you make the right move." secondaryHref="/about/" secondaryLabel="Read about me first">
         Buying, selling, or both. The first call costs nothing and you will leave it knowing what is realistic.
       </ClosingAsk>
     </>

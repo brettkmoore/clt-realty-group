@@ -17,13 +17,14 @@ export function Logo({ className, tone = 'ink' }: { className?: string; tone?: '
   return (
     <span className={clsx(className, 'inline-flex items-center gap-x-3 whitespace-nowrap')}>
       <Image
-        src="/brand/clt-mark.webp"
+        src="/brand/clt-mark-clear.webp"
         alt=""
         width={444}
         height={200}
         sizes="90px"
         priority
-        className={clsx('h-9 w-auto sm:h-10', tone === 'dark' && 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]')}
+        unoptimized
+        className={clsx('h-9 w-auto bg-transparent sm:h-10', tone === 'dark' && 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.45)]')}
       />
       <span className="inline-flex flex-col leading-none">
         <span className={clsx('font-display text-[20px] leading-none tracking-[-0.01em] sm:text-[22px]', tone === 'dark' ? 'text-cream' : 'text-ink')}>

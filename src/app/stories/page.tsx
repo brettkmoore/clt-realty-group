@@ -13,7 +13,7 @@ import { getStories } from '@/lib/stories'
 export const metadata: Metadata = {
   title: 'Stories from the field',
   description:
-    'Real transactions in Rock Hill, Charlotte, Waxhaw, Gastonia, Mooresville and the towns between, told by Candace L. Thompson without client names or addresses, with the numbers that mattered.',
+    'Closings Candace L. Thompson handled in Rock Hill, Charlotte, Waxhaw, Gastonia, Mooresville and the towns between, and the decision that got the home bought or sold.',
   alternates: { canonical: '/stories/' },
 }
 
@@ -22,10 +22,10 @@ export default async function StoriesPage() {
   return (
     <>
       <SchemaGraph nodes={[breadcrumb([{ name: 'Home', path: '/' }, { name: 'Stories', path: '/stories/' }])]} />
-      <InteriorHero eyebrow="Stories" title="Real deals in real neighborhoods, one at a time.">
+      <InteriorHero eyebrow="Stories" title="Legacies, one home at a time.">
         <p>
-          Every story here is a transaction I handled. I leave out the client&rsquo;s name and the street address and
-          keep everything else: the market that week, the problem, the decision I made, and the number at the end.
+          These are closings I handled for buyers and sellers. Each one is the market that week, the problem, the
+          decision I made, and the number at the end.
         </p>
         <p className="text-base/7">
           By area:{' '}

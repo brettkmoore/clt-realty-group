@@ -96,12 +96,13 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Image
-              src="/brand/clt-realty-group-logo.webp"
+              src="/brand/clt-realty-group-logo-clear.webp"
               alt="CLT Realty Group logo: the Charlotte skyline with the South Carolina palmetto and crescent, and the name Candace L. Thompson, MBA"
               width={800}
               height={576}
               sizes="240px"
-              className="h-auto w-60"
+              unoptimized
+              className="h-auto w-48 bg-transparent"
             />
             <p className="text-sm/6 text-balance text-ink-soft">{legal.serviceAreaSentence}</p>
             <div className="flex gap-x-6">

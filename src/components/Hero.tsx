@@ -31,7 +31,7 @@ import { agent, business, production } from '@/lib/site'
  */
 export function Hero() {
   return (
-    <section aria-label="Introduction" className="hero-full relative isolate -mt-[var(--nav-h)] flex flex-col justify-end overflow-hidden bg-night">
+    <section aria-label="Introduction" className="hero-full relative isolate -mt-[var(--nav-h)] flex flex-col justify-center overflow-hidden bg-night">
       <div className="absolute inset-0 -z-20">
         <HeroVideo />
         <Image
@@ -45,8 +45,7 @@ export function Hero() {
           className="hero-still absolute inset-0 h-full w-full object-cover"
         />
       </div>
-      <div aria-hidden="true" className="hero-scrim-y absolute inset-0 -z-10" />
-      <div aria-hidden="true" className="hero-scrim-x absolute inset-0 -z-10" />
+      <div aria-hidden="true" className="hero-scrim-center absolute inset-0 -z-10" />
 
       {/*
        * Brett and Candace, 2026-09-18, reviewing on her laptop: the call to
@@ -56,19 +55,20 @@ export function Hero() {
        * headline, the paragraph and the actions, and the portrait moved
        * out of the top and set beside the button with her name under it.
        */}
-      <div className="mx-auto w-full max-w-7xl px-6 pt-[calc(var(--nav-h)+1.5rem)] pb-8 sm:pb-10 lg:px-8 lg:pb-12">
-        <div className="max-w-2xl">
+      <div className="mx-auto w-full max-w-7xl px-6 pt-[var(--nav-h)] pb-10 lg:px-8">
+        <div className="max-w-2xl text-left">
           <p className="text-[12px] font-semibold tracking-[0.1em] uppercase text-cream/85 sm:text-[13px]">
             Rock Hill, Fort Mill, Charlotte and the Carolina towns around them
           </p>
           <h1 className="mt-3 font-display text-[2.375rem]/[1.04] tracking-[-0.01em] text-pretty text-cream sm:text-[3.25rem]/[1.03] lg:text-[4rem]/[1.02]">
-            A real estate agent who thinks like an analyst.
+            Building legacies, one home at a time.
           </h1>
           <p className="mt-4 max-w-xl text-base/7 text-cream/90 sm:text-lg/7">
-            I&rsquo;m Candace L. Thompson, a Rock Hill native. I earned an MBA while I was selling houses, and it
-            changed how I do this. I read a neighborhood&rsquo;s closed sales the way an analyst reads a balance sheet,
-            price for what buyers will actually pay, and structure a negotiation around your numbers.{' '}
-            {production.yearsExperience} years and {production.totalSales} closings on both sides of the state line.
+            I&rsquo;m Candace L. Thompson, a Rock Hill native and Carolina real estate expert. I educate my buyers,
+            empower my sellers, and create win-win environments. I combine hometown
+            knowledge, business expertise, and a passion for helping families build wealth through real estate.
+            I&rsquo;ve been in the business for {production.yearsExperience} years with {production.totalSales} closings
+            in North and South Carolina.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-5">
             <figure className="flex shrink-0 flex-col items-center">

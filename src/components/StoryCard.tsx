@@ -57,7 +57,7 @@ export function StoryCard({ story, priority = false }: { story: Story; priority?
           <p className="mt-5 line-clamp-3 text-sm/6 text-ink-soft">{story.summary}</p>
         </div>
         <div className="relative mt-8 flex items-center gap-x-4 justify-self-end">
-          <Image src={agent.headshot} alt="" width={40} height={40} className="size-10 rounded-full bg-paper object-cover grayscale" />
+          <Image src={agent.headshot} alt="" width={40} height={40} className="size-10 rounded-full bg-paper object-cover" />
           <div className="text-sm/6">
             <p className="font-semibold text-ink">{agent.name}</p>
             <p className="text-ink-soft">

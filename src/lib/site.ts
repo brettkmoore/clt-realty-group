@@ -99,7 +99,7 @@ export const production = {
   priceRange: '$60,000 to $625,000',
   averagePrice: '$355,000',
   zillowRating: { value: '5.0', count: 19, readOn: '2026-09-18' },
-  specialties: ["Buyer's agent", 'Listing agent', 'Relocation', 'Foreclosure', 'New construction'],
+  specialties: ["Buyer's agent", 'Listing agent', 'Relocation', 'New construction', 'Foreclosure', 'Land'],
   /**
    * CAREER SALES VOLUME. Null until Candace supplies the figure by email
    * (Brett, 2026-09-18). Set it as a display string, for example

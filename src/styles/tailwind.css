@@ -221,7 +221,7 @@
   right: 100%;
   bottom: -6px;
   height: 1px;
-  background: var(--color-blue);
+  background: var(--color-pink);
   transition: right 0.2s ease-out;
 }
 @media (hover: hover) {
@@ -375,6 +375,10 @@
 }
 .hero-scrim-x {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.18) 55%, rgba(0, 0, 0, 0) 100%);
+}
+/* Homepage hero: type sits in the middle, so the darkening follows it. */
+.hero-scrim-center {
+  background: radial-gradient(ellipse 110% 90% at 28% 50%, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.46) 48%, rgba(0, 0, 0, 0.26) 100%);
 }
 
 /* The header over the homepage video: transparent until the page scrolls. */
